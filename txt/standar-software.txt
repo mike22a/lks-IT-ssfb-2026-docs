@@ -1,0 +1,96 @@
+STANDAR SOFTWARE - LKS DIKMEN NASIONAL 2026
+IT Software Solution for Business
+=====================================
+
+Dokumen ini berisi standar software yang digunakan dalam kompetisi LKS DIKMEN Nasional 2026
+untuk kategori IT Software Solution for Business.
+
+SOFTWARE UMUM (SEMUA MODUL)
+===========================
+
+Sistem Operasi:
+- Windows 10 atau 11, 64-bit
+
+Office Suite:
+- Microsoft Office 365 Home/Education
+
+Browser:
+- Google Chrome versi terbaru
+
+Meeting Platform:
+- Zoom Workplace
+
+MODUL A & C: APLIKASI MOBILE (ANDROID)
+======================================
+
+IDE:
+- Android Studio (Panda Stable Version)
+
+Bahasa Pemrograman:
+- Kotlin dengan Jetpack Compose
+
+SDK:
+- Android SDK API Level 34
+
+Emulator:
+- AVD Manager (Pixel/Pixel XL - API 34)
+
+Build Tools:
+- Platform-Tools
+- Build-Tools
+
+MODUL B: APLIKASI DESKTOP (.NET)
+=================================
+
+IDE:
+- Microsoft Visual Studio Community Edition 2026
+
+Framework:
+- .NET 8 SDK
+
+Workloads (Visual Studio):
+- .NET Desktop Development
+- ASP.NET and Web Development
+- .NET Multi-platform App UI (.NET MAUI) - optional
+
+Database:
+- Microsoft SQL Server 2022 (RTM)
+
+Database Management:
+- SQL Server Management Studio 21
+
+NuGet Packages:
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+- Swashbuckle.AspNetCore
+- Microsoft.AspNetCore.Authentication.JwtBearer
+
+MODUL D: DESAIN PERANGKAT LUNAK
+================================
+
+Tool Diagram:
+- Draw.io Desktop Version
+
+Dokumentasi:
+- Microsoft Office 365 Home/Education
+
+PERSYARATAN INSTALASI
+=====================
+
+1. Semua software harus diinstal sebelum sesi familiarisasi
+2. Dependensi harus diverifikasi selama familiarisasi
+3. Perubahan apa pun selama kompetisi memerlukan persetujuan juri
+4. Tidak dapat mengganti atau menggunakan alat di luar persyaratan kompetisi
+
+CATATAN PENTING
+===============
+
+- Standar software ini berdasarkan Deskripsi Teknis LKS DIKMEN Nasional 2026
+- Peserta harus menggunakan versi software yang ditentukan
+- Penggunaan software di luar standar dapat mengakibatkan pengurangan skor atau diskualifikasi
+- Pastikan semua software terinstal dan berfungsi dengan baik sebelum kompetisi
+
+Referensi:
+- Dokumen resmi: pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf
+- Teks resmi: txt/deskripsi-teknis.txt

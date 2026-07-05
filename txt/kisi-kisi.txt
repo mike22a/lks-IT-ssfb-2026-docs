@@ -1,0 +1,37 @@
+General Requirements
+• Each module must include proper validation and clear error messages.
+• Scrollbars must be displayed when a list or view cannot be fully contained within a single layer.
+• Use the ISO-compliant date format YYYY-MM-DD for all date fields.
+• Apply proper naming conventions for all submitted materials.
+• All forms or reports must be displayed centered on the screen.
+• When a form or dialog is in focus, other forms must be disabled to prevent parallel processing.
+• The provided wireframes are for reference only. Modifications are permitted if they do not affect the
+functionality or performance of existing features.
+• Pay close attention to the allocated working time and manage the available time effectively.
+Module: Desktop Applications (.NET)
+• Import databases and their contents from external sources (database or API).
+• Create Windows Forms and UI components based on the given requirements.
+• Perform user input validation and enforce menu access restrictions based on user roles.
+• Display and manage database records, including create, read, update, delete (CRUD), search, and filtering
+operations.
+• Process data using relational queries, including JOIN and aggregate queries.
+• Present data in visual formats, such as charts.
+• Manipulate and manage data using DataGridView components.Instructions to the Competitor
+Module: Mobile Applications (Android)
+• Analyze given requirements and translate them into an appropriate database design.
+• Design and implement APIs according to the given endpoint contract.
+• Implement correct business logic for each API endpoint.
+• Define and provide API endpoints with proper HTTP methods, headers, parameters, request bodies, and
+appropriate responses (HTTP status codes, response headers, and response bodies).
+• Handle negative cases and errors by providing consistent and consumable API responses.
+• Create mobile application forms and UI components based on the given requirements.
+• Integrate the mobile application with APIs to display and manage data, including create, read, update, and
+delete (CRUD) operations.
+• Implement data searching and filtering features in the mobile application.
+• Export application data to external files.
+Module: Software Design
+• Able to analyze and document requirements based on user and system needs.
+• Able to develop use cases that clearly represent interactions between users and the system.
+• Able to model system workflows using activity diagrams in accordance with the defined requirements.
+• Able to design user interfaces for desktop and mobile applications that meet functional requirements and
+usability principles.

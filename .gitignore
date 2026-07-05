@@ -1,0 +1,46 @@
+# Ignore .report folder
+.report/
+
+# Ignore app-blueprint (cloned repository)
+app-blueprint/
+
+# Common .gitignore entries
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+dist/
+build/
+
+# Node modules (if any)
+node_modules/
+
+# Python (if any)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Temporary files
+*.temp
+*.cache

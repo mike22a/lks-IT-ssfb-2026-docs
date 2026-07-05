@@ -1,0 +1,537 @@
+1. PENDAHULUAN
+1.1.Nama dan Deskripsi Bidang Lomba
+1.1.1. Nama Bidang Lomba
+Teknologi Informasi Piranti Lunak untuk Bisnis (IT Software Solution for Business).
+1.1.2. Deskripsi Bidang Lomba
+Pesatnya laju globalisasi selama dekade terakhir sebagian besar didorong oleh
+perkembangan Information and Communication Technology (ICT). IT specialists
+semakin dibutuhkan di berbagai bidang, salah satunya adalah penyediaan perangkat
+lunak (software) bagi dunia bisnis.
+Pengembangan software solution untuk meningkatkan produktivitas bisnis mencakup
+berbagai keterampilan dan disiplin ilmu. Hal yang sangat penting dalam bidang ini
+adalah kesadaran terhadap sifat industri yang berubah dengan cepat serta kemampuan
+untuk terus mengikuti laju perubahan tersebut.
+Profesional IT software solution merepresentasikan spektrum yang luas dari software
+developers, seperti computer programmers, computer systems designers, analysts, dan
+full stack developers. Mereka selalu bekerja erat dengan klien untuk memodifikasi
+sistem yang sudah ada atau menciptakan sistem baru. Mereka dapat memodifikasi “offthe-shelf” software dan mengintegrasikannya ke dalam sistem yang sudah ada.
+Mereka sering bekerja sebagai bagian dari tim software professionals yang bertanggung
+jawab atas requirement specification, penulisan algoritma, system analysis and design,
+construction, testing, training, dan implementation, serta maintenance dari sebuah
+business software system. Pekerjaan mereka umumnya lebih berorientasi pada sisi
+backend.
+1.2.Deskripsi Teknis
+Bidang lomba IT Software Solution for Business merupakan bidang lomba yang
+berkaitan dengan pekerjaan sebagai seorang Software Developer dengan tugas yang
+mencakup, namun tidak terbatas pada, hal-hal berikut:
+▪ Meninjau current system dan menyampaikan ide-ide untuk perbaikan, termasuk
+cost benefit analysis.
+▪ Menganalisis dan menspesifikasikan user requirements.
+▪ Menyusun detailed specifications untuk sistem baru atau untuk modifikasi pada
+sistem yang sudah ada.
+▪ Mengembangkan software systems serta melakukan testing terhadap software
+solution secara menyeluruh.
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 7
+▪ Menyediakan solusi sesuai dengan specific requirements dari setiap enterprise.
+▪ Menyiapkan user training materials, melatih users, serta mempresentasikan
+software solution kepada pengguna.
+▪ Melakukan installation, implementation, dan maintenance terhadap software
+systems.
+Tingkat kesulitan soal disesuaikan dengan kurikulum pendidikan DIKMEN dan ratarata tingkat kemampuan (berdasarkan data hasil LKS Nasional sebelumnya) serta
+kenyamanan peserta untuk menyelesaikan soal dengan bentuk proyek uji yang diberikan
+mengikuti WorldSkills Occupational Standards (WSOS).
+1.3.Dokumen Terkait
+Dokumen ini hanya berisi informasi tentang aspek teknis keterampilan, dokumen lain
+terkait yang juga harus dipelajari adalah:
+▪ Petunjuk Teknis Umum lomba,
+▪ Informasi di akun Peserta, pembimbing dan Ketua Kontingen:
+a. Deskripsi Teknis Bidang Lomba LKS
+b. Kisi-kisi soal LKS
+c. Form Kebutuhan Bahan
+d. Lembar Kebutuhan Bahan
+Diskusi terkait pelaksanaan lomba dilaksanakan melalui kegiatan:
+1. Koordinasi Kepala Dinas Pendidikan
+2. Technical meeting, pembimbing dan peserta sebelum pelaksanaan lomba.
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 8
+2. STANDAR KOMPETENSI BIDANG LOMBA
+2.1.Ketentuan Umum
+LKS mengukur pengetahuan dan pemahaman melalui penampilan/unjuk kerja. Proyek
+uji, skema penilaian, dan bobot masing-masing modul proyek uji dikembangkan
+berdasarkan spesifikasi kompetensi LKS-DIKMEN.
+2.2.Spesifikasi Kompetensi LKS-DIKMEN
+Spesifikasi Kompetensi adalah rumusan target kompetensi yang akan dilombakan.
+Target kompetensi dirumuskan berdasarkan situasi dunia kerja atau industri dengan
+tetap memperhatikan kurikulum DIKMEN. Berikut spesifikasi kompetensi LKSDIKMEN:
+Modul Lomba Kompetensi Perbandingan Bobot
+WSC
+2024
+LKS
+2025
+LKS
+Waktu Modul 2026 Bobot
+Hari Pertama (H1)
+3 Jam Mobile
+Applications
+(Android)
+25% 1. Mampu merancang database dan
+membangun API sesuai endpoint
+contract beserta logika yang benar.
+2. Mampu menghasilkan API
+response yang konsisten dan dapat
+dikonsumsi, termasuk penanganan
+negative cases dan error handling.
+3. Mampu menganalisis requirements
+dan mengimplementasikannya ke
+dalam aplikasi mobile beserta
+komponen UI yang sesuai.
+4. Mampu mengintegrasikan aplikasi
+mobile dengan API untuk
+pengolahan data (CRUD,
+searching, filtering, export)
+melalui UI mobile.
+35% 25% 25%
+3 Jam Desktop
+Applications
+(.NET)
+30% 1. Mampu membangun dan
+mengelola koneksi aplikasi desktop
+ke MsSQL Server baik secara
+langsung maupun melalui API.
+2. Mampu menampilkan serta
+mengolah data dalam aplikasi
+desktop melalui fitur CRUD,
+termasuk query join dan aggregate.
+3. Mampu menerapkan validasi input,
+searching, filtering, serta
+visualisasi data (chart).
+4. Mampu menerapkan kontrol akses,
+keamanan dasar, dan error
+handling.
+30% 20% 15%
+Hari Kedua (H2)
+3 Jam Mobile
+Applications
+(Android)
+25% 1. Mampu merancang database dan
+membangun API sesuai endpoint
+contract beserta logika yang benar.
+35% 25% 25%
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 9
+2. Mampu menghasilkan API
+response yang konsisten dan dapat
+dikonsumsi, termasuk penanganan
+negative cases dan error handling.
+3. Mampu menganalisis requirements
+dan mengimplementasikannya ke
+dalam aplikasi mobile beserta
+komponen UI yang sesuai.
+4. Mampu mengintegrasikan aplikasi
+mobile dengan API untuk
+pengolahan data (CRUD,
+searching, filtering, export)
+melalui UI mobile.
+3 Jam Software Design 20% 1. Mampu menganalisis dan
+mendokumentasikan requirements
+berdasarkan kebutuhan pengguna
+dan sistem.
+2. Mampu mengembangkan use case
+yang merepresentasikan interaksi
+antara pengguna dan sistem secara
+jelas.
+3. Mampu memodelkan alur proses
+sistem menggunakan activity
+diagram sesuai dengan
+requirements.
+4. Mampu merancang user interface
+untuk desktop maupun mobile
+application yang sesuai dengan
+kebutuhan fungsional dan usability.
+0% 0% 10%
+12
+Jam Jumlah 100% 100% 70% 75%
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 10
+3. SISTEM PENILAIAN
+Penilaian LKS-DIKMEN menggunakan ketentuan yang telah ditetapkan panitia dalam
+petunjuk teknis. Penilaian tersebut menggunakan metode Judgement dan Measurement.
+Penilaian Judgement dilakukan dengan cara pengamatan proses maupun hasil. Untuk
+memudahkan justifikasi dalam metode penilaian judgment maka disediakan deskripsi
+capaian setiap kriteria. Sedangkan penilaian measurement didasarkan pada ketepatan
+pengukuran setiap kriteria.
+3.1.Petunjuk Umum
+Penilaian LKS DIKMEN Tingkat Nasional menggunakan skema penilaian yang telah
+ditetapkan sebelumnya sesuai dengan aturan dan instruksi pada test project actual yang
+diberikan kepada peserta pada saat bertanding. Penilaian dilakukan oleh tim Juri atau
+Expert menggunakan dua metode, yaitu judgement dan measurement. Judgement
+merupakan metode yang digunakan untuk menilai kualitas kinerja yang dimungkinkan
+adanya perbedaan pandangan berdasarkan tolak ukur penerapan di industri. Sedangkan
+measurement merupakan metode yang digunakan untuk menilai akurasi, presisi dan
+kinerja lain yang diukur secara objektif.
+Hasil penilaian oleh juri, yang diberikan dalam skala nilai akhir 0–100, akan
+dimasukkan dan diproses ke dalam Competition Information System (CIS) yang
+digunakan pada WorldSkills Competition.
+Sistem CIS kemudian mengonversi nilai tersebut ke dalam skala standar kompetensi 0–
+700. Skala ini digunakan untuk menentukan peringkat Juara 1, Juara 2, dan Juara 3, serta
+Medallion of Excellence bagi peserta yang memperoleh nilai di atas 700. Selain itu,
+sistem juga menghasilkan urutan peringkat seluruh peserta secara keseluruhan.
+3.2.Kriteria Penilaian
+Kriteria penilaian merupakan pembagian skema penilian kedalam beberapa kriteria
+yang diujikan dan dinilai pada setiap bidang lomba. Dalam setiap bidang lomba idealnya
+memiliki beberapa kriteria penilaian. Satu kriteria penilaian dapat menjadi satu modul
+proyek uji atau terbagi kedalam beberapa modul proyek uji. Kriteria penilaian dan bobot
+masing-masing kriteria bidang IT Software Solution for Business pada LKS Nasional
+tahun 2026 adalah sebagai berikut:
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 11
+Modul Kriteria/Sub-Kriteria
+A Mobile Applications (Android)
+B Desktop Applications (.NET)
+C Mobile Applications (Android)
+D Software Design
+3.2.1. Pengujian dan Penilaian Judgement
+Penilaian judgement merupakan metode yang digunakan untuk menilai kualitas kinerja
+yang mungkin akan ada sedikit perbedaan pandangan berdasarkan tolak ukur
+penerapannya di industri.
+Penilaian judgement ini menggunakan skor yang diberikan juri dengan skor harus dalam
+rentang 0, 1, 2 dan 3. Nilai yang diberikan dihitung dari skor yang diberikan oleh juri
+dalam tim penilaian.
+Masing-masing dari juri menilai setiap aspek sub kriteria, apakah peserta sudah
+mencoba mengerjakan dengan sesuai atau tidak. Skor dari 0 hingga 3 terkait dengan
+standar industri sebagai berikut:
+▪ 0: Kinerja di bawah standar industri, termasuk tidak mengerjakan
+▪ 1: Kinerja memenuhi standar industri
+▪ 2: Kinerja melampaui standar industri
+▪ 3: Kinerja luar biasa menyamai atau melebihi ekspektasi industri terkini.
+Contoh penilaian judgement
+Aspect
+Type
+M | J
+Aspect - Description Judg
+Score
+Extra Aspect Description (Meas or Judg)
+OR
+Judgement Score Description (Judg only)
+J Effectiveness of visual
+communication
+0 Wireframes are unclear and do not effectively
+communicate the design
+1 Wireframes are somewhat clear but could be
+more effective in communicating the design
+2 Wireframes are clear and effectively
+communicate most aspects of the design
+3 Wireframes are exceptionally clear and
+effectively communicate all aspects of the
+design
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 12
+3.2.2. Pengujian dan Penilaian Measurement
+Measurement merupakan metode yang digunakan untuk menilai akurasi, presisi dan
+kinerja lain yang diukur secara objektif. Measurement digunakan dimana ambiguitas
+dalam asesmen perlu dihindari. Pertimbangan pengujian dan penilaian untuk
+measurement adalah sebagai berikut:
+▪ Biner, 1 bila sesuai kriteria atau 0 bila tidak sesuai.
+▪ Memenuhi semua spesifikasi yang telah ditentukan dalam test project.
+3.2.3. Komposisi Penilaian Judgement dan Measurement
+Keputusan mengenai pemilihan kriteria dan metode penilaian ditentukan pada
+penyusunan dan pengembangan dokumen lomba dalam test project dan format
+penilaian. Pada bidang IT Software Solution for Business, komposisi penilian judgement
+dan measurement adalah sebagai berikut:
+No Modul Kriteria/Sub-Kriteria J M Total
+1 A Mobile Applications (Android) - 25% 25%
+2 B Desktop Applications (.NET) - 30% 30%
+3 C Mobile Applications (Android) - 25% 25%
+4 D Software Design - 20% 20%
+Total 0 100% 100%
+3.3.Sub Kriteria
+Setiap kriteria terbagi menjadi satu atau lebih sub kriteria yang akan muncul dalam form
+penilain. Setiap sub kriteria terdapat aspek yang akan dinilai sebagai judgement,
+measurement atau keduanya.
+Contoh sub kriteria
+Sub Criterion ID Sub Criterion
+Name or Description
+A1 Login Screen
+A2 Register Screen
+A3 Home Screen
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 13
+3.4.Aspek Penilaian
+Setiap Sub Kriteria terbagi menjadi satu atau lebih Aspek Penilaian. Aspek
+dikategorikan sebagai judgement atau measurement seperti penjelasan (3.2).
+Contoh aspek penilaian
+Sub
+Criterion
+ID
+Sub Criterion
+Name or Description
+Aspect
+Type
+M | J
+Aspect - Description
+A1 Login Screen
+M Proper UI
+M General Validation (username, password)
+M Login Process
+M Navigations
+M API Implemeteation
+3.5.Keseluruhan Skema Penilaian
+Kriteria, sub kriteria, aspek, deskripsi berserta point setiap aspek tertuang didalam
+dokumen format excel sistem CIS (Competition Information Systems) dengan sebagai
+berikut:
+Contoh skema penilaian
+Sub
+Criteria
+ID
+Sub
+Criterion
+Name or
+Description
+TP Aspect - Description Extra Aspect Description
+OR
+Judgement Score Description
+Max
+Mark
+A1 Login
+Screen
+M Proper UI Deduct 0.1 for each missing
+component
+0.60
+Deduct 0.1 if password is shown
+as plain text
+M General Validation
+(username, password)
+Deduct 0.15 if not validating
+empty fields
+0.15
+M Login Process Deduct 0.1 if incorrect email
+and password combination can
+login
+0.40
+Deduct 0.2 if recruiter can't
+login to the system
+Deduct 0,1 if user is not
+directed to Home Screen
+M Navigations Deduct 0.1 if user can't go to
+Register Screen
+0.10
+M API Implementation Deduct 0.5 if not implementing
+API properly
+1.00
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 14
+3.6.Prosedur Penilaian
+Juri melakukan penilaian menggunakan skema penilaian yang berisi kriteria, subkriteria, aspek, bagaimana cara menilai dan kriteria standar penilaian hasil pekerjaan.
+Proses penilaian peserta sejak awal hingga akhir menggunakan standar penilaian yang
+telah ditentukan tersebut. Hasil proses penilaian oleh juri akan dimasukkan ke dalam
+sistem CIS (Competition Information Systems) untuk dikonversi ke dalam skala
+WorldSkills dan menentukan juara 1, 2, 3 dan medallions of excellence. Bidang IT
+Software Solution for Business pada LKS Nasional tahun 2026 untuk proses penilaian
+dilakukan sesuai dengan jadwal yang sudah ditentukan sebagai berikut:
+Modul Kriteria/Sub-Kriteria Hari Bobot
+A Mobile Applications (Android) H1 25%
+B Desktop Applications (.NET) H1 30%
+C Mobile Applications (Android) H2 25%
+D Software Design H2 20%
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 15
+4. FORMAT / STRUKTUR PROYEK UJI
+4.1.Petunjuk Umum
+▪ LKS Nasional 2026 bidang IT Software Solution for Business dilaksanakan secara
+daring. Setiap peserta mengerjakan Test Project menggunakan komputer/laptop
+masing-masing di lokasi lomba.
+▪ Material Test Project (MTP) dikembangkan untuk mengukur seluruh spesifikasi
+kompetensi yang harus dikuasai dan diujikan kepada peserta. Proyek uji bidang IT
+Software Solution for Business pada Lomba Kompetensi Siswa (LKS) Pendidikan
+Menengah (DIKMEN) XXXIII Tahun 2026 bersifat tertutup dan hanya akan dibuka
+pada saat pelaksanaan kompetisi.
+▪ MTP disajikan dalam bahasa Inggris; apabila diperlukan, peserta diperbolehkan
+membawa buku kamus fisik untuk keperluan translasi.
+▪ Lomba dilaksanakan secara daring dengan pembatasan penggunaan internet. Peserta
+tidak diperkenankan menggunakan internet untuk browsing referensi, pencarian
+solusi, maupun penggunaan AI tools, kecuali untuk kebutuhan teknis yang diizinkan
+panitia, seperti akses platform lomba, pengumpulan hasil, dan Gradle sync pada
+modul Mobile Applications (Android).
+▪ Penggunaan AI-based assistant selama lomba tidak diperkenankan, termasuk namun
+tidak terbatas pada ChatGPT, GitHub Copilot, Cursor AI, Gemini, Claude, maupun
+fitur AI autocomplete lainnya. Apabila ditemukan penggunaan tools AI selama
+kompetisi berlangsung, peserta dapat dikenakan pengurangan nilai hingga
+diskualifikasi sesuai keputusan juri.
+▪ Sebagai bentuk persiapan, calon peserta dapat menggunakan panduan yang
+tercantum dalam dokumen Pedoman Lomba dan Kisi-kisi Lomba.
+4.2.Persyaratan Uji
+Peserta wajib mempersiapkan seluruh alat dan bahan berupa perangkat lunak (software)
+yang digunakan sesuai dengan kebutuhan lomba, sebagaimana tercantum pada bagian
+Daftar Alat dan Bahan.
+4.3.Sirkulasi Kisi-kisi dan Proyek Uji
+Kisi-kisi dan Deskripsi Teknis Lomba akan dipublikasikan secara resmi melalui laman
+Puspresnas https://smk.pusatprestasinasional.kemdikbud.go.id/lks.
+Apabila terdapat perubahan atau perbaikan yang diperlukan, maka semuanya akan
+dipublikasikan kembali dalam laman yang sama.
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 16
+Proyek uji yang sudah dikembangkan akan diunggah di laman Puspresnas
+https://smk.pusatprestasinasional.kemdikbud.go.id/lks.
+Peserta dan pembimbing LKS DIKMEN Tingkat Nasional Tahun 2026 bisa mengunduh
+menggunakan akun peserta atau akun pembimbing pada waktu yang sudah ditentukan
+dalam Petunjuk Umum LKS DIKMEN Tingkat Nasional Tahun 2026.
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 17
+5. DAFTAR ALAT
+5.1.Ketentuan umum
+Peserta wajib menggunakan perangkat, software, dan environment yang telah
+ditentukan oleh juri. Peserta tidak diperkenankan mengganti atau menggunakan tools di
+luar ketentuan lomba, kecuali terdapat instruksi khusus dari juri terkait kebutuhan
+tertentu sesuai ketentuan yang telah ditetapkan.
+Peserta diberikan waktu familiarisasi environment dan tools lomba pada sesi Technical
+Meeting H-1 dengan durasi maksimal 2 jam. Sesi ini digunakan untuk memastikan
+perangkat, software, dependency, serta kebutuhan teknis lainnya dapat berjalan dengan
+baik sebelum lomba dimulai.
+Selama pelaksanaan lomba, setiap perubahan perangkat, software, dependency, atau
+tools pendukung wajib dilaporkan kepada juri/panitia untuk mendapatkan persetujuan.
+Juri berhak menolak perubahan apabila dinilai tidak diperlukan atau tidak sesuai dengan
+kebutuhan dan aturan kompetisi.
+5.2.Daftar alat peserta
+Alat yang dipersiapkan oleh peserta meliputi:
+No Alat Lomba Spesifikasi Jumlah
+1 Komputer /
+Laptop
+▪ Processor setara Intel Core i5
+generasi ke-8 atau lebih tinggi
+▪ RAM minimal 16 GB
+▪ SSD dengan kapasitas
+minimal 256 GB
+▪ Dongle Wi-Fi (opsional) bagi
+peserta yang menggunakan
+PC/desktop dan tidak
+memiliki modul Wi-Fi
+internal.
+▪ Peserta yang menggunakan
+PC (desktop) perlu
+menyediakan satu (1) monitor
+berukuran 20–24 inci.
+1 Perangkat
+*Disarankan membawa 1
+cadangan
+** Kondisi komputer/laptop
+sangat disarankan fresh
+install tanpa ada
+data/dokumen lain.
+*** Jika pada saat lomba
+ditemukan data, panitia tidak
+bertanggung jawab jika data
+tersebut dihapus.
+2 Mouse Mouse yang digunakan wajib
+bertipe berkabel (wired), nonprogrammable, dan tidak
+memiliki fitur penyimpanan
+(memory).
+1 Buah
+*1 cadangan jika diperlukan
+3 Keyboard Keyboard yang digunakan wajib
+bertipe berkabel (wired), nonprogrammable, dan tidak
+memiliki fitur penyimpanan
+(memory).
+1 Buah
+*1 cadangan jika diperlukan
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 18
+4 External Web
+Camera
+• Minimal 1024 x 768, 30 FPS
+• Tripod dudukan kamera
+Catatan: Jika tidak tersedia, dapat
+digantikan dengan menggunakan
+kamera dari smartphone dengan
+kualitas mendekati kebutuhan.
+2 Buah
+*Jika menggunakan laptop,
+salah satu kamera bisa
+digantikan dengan web
+camera yang terpasang pada
+laptop.
+Deskripsi Teknis Bidang Lomba IT Software Solution for Business
+ 19
+6. DAFTAR BAHAN
+6.1.Bahan Penunjang
+Bahan yang wajib dipersiapkan peserta meliputi software yang diperlukan untuk
+pelaksanaan lomba. Seluruh software wajib telah terinstal pada komputer/laptop yang
+akan digunakan peserta sebelum pelaksanaan familiarisasi.
+No Bahan / Aplikasi Spesifikasi Keterangan
+1 Operating System Windows 10 or 11, 64 bit
+2 Microsoft Office Microsoft Office 365 Home/Education
+3 Microsoft Visual
+Studio
+Microsoft Visual Studio Community Edition 2026
+▪ NET Desktop Development
+▪ ASP.NET and Web Development
+▪ .NET Multi-platform App UI (.NET MAUI)
+(opsional sebagai alternatif pengembangan aplikasi
+mobile)
+▪ .NET 8 SDK
+NuGet Package (optional):
+▪ Microsoft.EntityFrameworkCore
+▪ Microsoft.EntityFrameworkCore.SqlServer
+▪ Microsoft.EntityFrameworkCore.Tools
+▪ Swashbuckle.AspNetCore
+▪ Microsoft.AspNetCore.Authentication.JwtBearer
+4 SQL Server Microsoft SQL Server 2022 (RTM)
+5 SQL Server
+Management Studio
+SQL Server Management Studio 21
+6 Android Studio Android Studio (Panda Stable Version)
+▪ Android SDK (Platform-Tools, Build-Tools)
+▪ Android SDK API Level 34
+▪ AVD Manager (Pixel/Pixel XL - API 34)
+▪ Kotlin with Jetpack Compose
+7 Draw.io Desktop Version
+8 Browser Google Chrome latest version
+9 Zoom Workplace -
+
+
+8. JADWAL BIDANG LOMBA
+No WAKTU KEGIATAN
+1 Persiapan (Direncanakan 30 hari sebelum lomba)
+TBC 1 jam Technical Meeting 1 – Pembahasan Teknis Lomba
+(Juri, Pembimbing & Peserta)
+2 H-1 Lomba
+TBC 1 jam Technical Meeting 2 – Pelaksanaan Lomba
+(Juri, Pembimbing & Peserta)
+TBC 2 jam Familiarisasi Alat dan Bahan
+3 Lomba Hari ke 1 (H1)
+07.00 – 07.30 30 menit Briefing Modul A: Mobile Applications (Android)
+07.30 – 10.30 3 jam Lomba Modul A: Mobile Applications (Android)
+10.30 – 11.30 1 jam Istirahat, Sholat dan Makan
+11.30 – 12.00 30 menit Briefing Modul B: Desktop Applications (.NET)
+12.00 – 15.00 3 jam Lomba Modul B: Desktop Applications (.NET)
+4 Lomba Hari ke 2 (H2)
+07.00 – 07.30 30 menit Briefing Modul C: Mobile Applications (Android)
+07.30 – 10.30 3 jam Lomba Modul C: Mobile Applications (Android)
+10.30 – 11.30 1 jam Istirahat, Sholat dan Makan
+11.30 – 12.00 30 menit Briefing Modul D: Software Design
+12.00 – 15.00 3 jam Lomba Modul D Software Design
+5 Lomba Hari ke 3 (H3)
+08.00 - 09.00 1 jam Penutupan dan Evaluasi Lomba
+
+9. PROSEDUR KESEHATAN DAN KESELAMATAN KERJA (K3)
+Kesehatan dan keselamatan kerja pada bidang lomba IT Software Solution for Business
+menjadi prinsip kerja yang harus diperhatikan oleh setiap orang yang terlibat baik
+Panitia, Juri, Teknisi, Peserta dan Pendamping. Prinsip K3 di tempat lomba mengacu
+kepada Petunjuk Teknis Lomba Kompetensi Siswa DIKMEN Tingkat Nasional tahun
+2026. Dalam pelaksanaannya, hal-hal yang perlu diperhatikan oleh setiap pihak adalah
+sebagai berikut:
+▪ Senantiasa mengutamakan Kesehatan dan Keselamatan Kerja selama pelaksanaan
+lomba termasuk mengerjakan proyek uji dan atau tahapan persiapan khususnya pada
+hal-hal yang dianggap memiliki risiko terhadap Kesehatan dan keselamatan kerja.
+▪ Layout tempat lomba, akses keluar dan penempatan barang-barang harus
+memperhatikan jalur evakuasi menuju tempat aman.
+▪ Instalasi kelistrikan wajib memenuhi standar keamanan tinggi dengan
+memperhatikan kualitas komponen, jalur kabel listrik pada layout, sambungan kabel
+maupun instalasi pada MCB dan terminal yang sesuai dengan spesifikasinya.
+▪ Selama di tempat lomba, Peserta, Pendamping, Juri dan Panitia senantiasa
+memperhatikan aktivitas dan perpindahan tempat agar tidak menimbulkan risiko
+kerusakan komponen atau risiko yang lebih buruk.
+▪ Menempatkan dan memperhatikan benda dengan risiko tingkat kelembaban tinggi
+atau bahkan berunsur air agar di tempat pada lokasi yang jauh dari komponen listrik.
+▪ Selama lomba berlangsung, air mineral tidak diperkenankan untuk disimpan dalam
+keadaan terbuka dan atau dekat dengan komponen listrik
