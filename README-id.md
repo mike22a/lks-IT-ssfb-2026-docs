@@ -15,17 +15,62 @@ Repository ini berisi dokumentasi komprehensif dan analisis untuk kompetisi **LK
 ## Struktur Proyek
 
 ```
-LKS/
+lks-IT-ssfb-2026-docs/
 ├── pdf/
 │   ├── lks-it software solution for bussiness-deskripsi-teknis.pdf  # PDF deskripsi teknis resmi asli
 │   └── lks-it software solution for bussiness-kisi-kisi.pdf          # PDF persyaratan kompetisi resmi asli
+│   └── previous-year/                                                      # Soal-soal kompetisi tahun sebelumnya
 ├── txt/
 │   ├── deskripsi-teknis.txt                    # Teks disalin dari PDF asli (deskripsi teknis)
-│   └── kisi-kisi.txt                            # Teks disalin dari PDF asli (persyaratan kompetisi)
+│   ├── kisi-kisi.txt                            # Teks disalin dari PDF asli (persyaratan kompetisi)
+│   ├── standar-software.txt                    # Persyaratan software standar
+│   └── training-structure-folder.md             # Struktur folder rencana pelatihan
 ├── Docs/
 │   ├── detailed-breakdown.md                    # Analisis detail deskripsi teknis
 │   └── competition-requirements-specification.md  # Spesifikasi teknis detail
-└── README.md                                    # File ini
+├── Docs-id/
+│   ├── detailed-breakdown-id.md                # Terjemahan Bahasa Indonesia dari detailed-breakdown.md
+│   └── competition-requirements-specification-id.md  # Terjemahan Bahasa Indonesia dari competition-requirements-specification.md
+├── training-plan/
+│   ├── agent_plan/
+│   │   ├── objective.md                        # Tujuan pelatihan dan kriteria keberhasilan
+│   │   ├── training_strategy.md                # Metodologi dan strategi pelatihan
+│   │   ├── evaluation_criteria.md              # Kriteria penilaian dan checkpoint
+│   │   └── mentor_notes.md                     # Catatan untuk mentor per sesi
+│   ├── plan/
+│   │   ├── session_01.md                       # Sesi 1: API .NET Foundation
+│   │   ├── session_02.md                       # Sesi 2: API .NET Advanced
+│   │   ├── session_03.md                       # Sesi 3: Desktop Apps Foundation
+│   │   ├── session_04.md                       # Sesi 4: Desktop Apps Database Integration
+│   │   ├── session_05.md                       # Sesi 5: Desktop Apps Advanced Features
+│   │   ├── session_06.md                       # Sesi 6: Mobile Android Foundation
+│   │   ├── session_07.md                       # Sesi 7: Mobile Android API Integration
+│   │   └── session_08.md                       # Sesi 8: Review & Practice
+│   ├── assignments/
+│   │   ├── hw_01.md                            # Tugas untuk Sesi 1
+│   │   ├── hw_02.md                            # Tugas untuk Sesi 2
+│   │   ├── hw_03.md                            # Tugas untuk Sesi 3
+│   │   ├── hw_04.md                            # Tugas untuk Sesi 4
+│   │   ├── hw_05.md                            # Tugas untuk Sesi 5
+│   │   ├── hw_06.md                            # Tugas untuk Sesi 6
+│   │   ├── hw_07.md                            # Tugas untuk Sesi 7
+│   │   └── hw_08.md                            # Tugas untuk Sesi 8
+│   └── mock_exam/
+│       ├── mock_exam_01.md                     # Ujian simulasi: API .NET & Desktop Apps
+│       └── mock_exam_02.md                     # Ujian simulasi: Mobile Android Full Integration
+├── daily-plans/
+│   ├── session-01.md                           # File sesi lama (dipindahkan ke training-plan/plan/)
+│   ├── session-02.md
+│   ├── session-03.md
+│   ├── session-04.md
+│   ├── session-05.md
+│   ├── session-06.md
+│   ├── session-07.md
+│   └── session-08.md
+├── plan.md                                      # Ikhtisar rencana pelatihan
+├── README.md                                    # File ini (versi Bahasa Inggris)
+├── README-id.md                                 # File ini (versi Bahasa Indonesia)
+└── .gitignore                                   # Aturan git ignore
 ```
 
 ## Deskripsi Dokumen

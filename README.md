@@ -15,17 +15,62 @@ This repository contains comprehensive documentation and analysis for the **LKS 
 ## Project Structure
 
 ```
-LKS/
+lks-IT-ssfb-2026-docs/
 ├── pdf/
 │   ├── lks-it software solution for bussiness-deskripsi-teknis.pdf  # Original official technical description PDF
 │   └── lks-it software solution for bussiness-kisi-kisi.pdf          # Original official competition requirements PDF
+│   └── previous-year/                                                      # Previous year competition papers
 ├── txt/
 │   ├── deskripsi-teknis.txt                    # Text copied from original PDF (technical description)
-│   └── kisi-kisi.txt                            # Text copied from original PDF (competition requirements)
+│   ├── kisi-kisi.txt                            # Text copied from original PDF (competition requirements)
+│   ├── standar-software.txt                    # Standard software requirements
+│   └── training-structure-folder.md             # Training plan folder structure
 ├── Docs/
 │   ├── detailed-breakdown.md                    # Detailed analysis of technical description
 │   └── competition-requirements-specification.md  # Detailed technical specifications
-└── README.md                                    # This file
+├── Docs-id/
+│   ├── detailed-breakdown-id.md                # Indonesian translation of detailed-breakdown.md
+│   └── competition-requirements-specification-id.md  # Indonesian translation of competition-requirements-specification.md
+├── training-plan/
+│   ├── agent_plan/
+│   │   ├── objective.md                        # Training objectives and success criteria
+│   │   ├── training_strategy.md                # Training methodology and strategy
+│   │   ├── evaluation_criteria.md              # Evaluation criteria and checkpoints
+│   │   └── mentor_notes.md                     # Notes for mentor per session
+│   ├── plan/
+│   │   ├── session_01.md                       # Session 1: API .NET Foundation
+│   │   ├── session_02.md                       # Session 2: API .NET Advanced
+│   │   ├── session_03.md                       # Session 3: Desktop Apps Foundation
+│   │   ├── session_04.md                       # Session 4: Desktop Apps Database Integration
+│   │   ├── session_05.md                       # Session 5: Desktop Apps Advanced Features
+│   │   ├── session_06.md                       # Session 6: Mobile Android Foundation
+│   │   ├── session_07.md                       # Session 7: Mobile Android API Integration
+│   │   └── session_08.md                       # Session 8: Review & Practice
+│   ├── assignments/
+│   │   ├── hw_01.md                            # Homework for Session 1
+│   │   ├── hw_02.md                            # Homework for Session 2
+│   │   ├── hw_03.md                            # Homework for Session 3
+│   │   ├── hw_04.md                            # Homework for Session 4
+│   │   ├── hw_05.md                            # Homework for Session 5
+│   │   ├── hw_06.md                            # Homework for Session 6
+│   │   ├── hw_07.md                            # Homework for Session 7
+│   │   └── hw_08.md                            # Homework for Session 8
+│   └── mock_exam/
+│       ├── mock_exam_01.md                     # Mock exam: API .NET & Desktop Apps
+│       └── mock_exam_02.md                     # Mock exam: Mobile Android Full Integration
+├── daily-plans/
+│   ├── session-01.md                           # Legacy session files (moved to training-plan/plan/)
+│   ├── session-02.md
+│   ├── session-03.md
+│   ├── session-04.md
+│   ├── session-05.md
+│   ├── session-06.md
+│   ├── session-07.md
+│   └── session-08.md
+├── plan.md                                      # Overall training plan overview
+├── README.md                                    # This file
+├── README-id.md                                 # Indonesian version of README.md
+└── .gitignore                                   # Git ignore rules
 ```
 
 ## Document Descriptions
