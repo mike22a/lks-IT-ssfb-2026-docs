@@ -1,5 +1,6 @@
 # Ignore .report folder
 .report/
+dotnet-api-example/
 
 # Ignore app-blueprint (cloned repository)
 app-blueprint/
@@ -44,3 +45,4 @@ env/
 # Temporary files
 *.temp
 *.cache
+AGENT.md

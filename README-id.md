@@ -238,6 +238,9 @@ Dokumen ini mengembangkan kisi-kisi dengan detail implementasi:
 
 ## Cara Menggunakan Repository Ini
 
+### Contoh Implementasi API Praktis
+*   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (BookstoreApi)](./dotnet-api-example/01-BookstoreApi/GUIDE.md)**: Panduan lengkap dan ramah pemula untuk membangun Clean Architecture ASP.NET Core API dengan SQLite/SQL Server, autentikasi JWT, dan pola repository dari nol.
+
 ### Untuk Peserta
 1. **Mulai dengan `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** untuk melihat struktur kompetisi resmi asli
 2. **Tinjau `pdf/lks-it software solution for bussiness-kisi-kisi.pdf`** untuk melihat persyaratan kompetisi resmi asli
