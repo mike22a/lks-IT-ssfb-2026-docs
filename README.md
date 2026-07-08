@@ -239,7 +239,7 @@ This document expands on the kisi-kisi with implementation details:
 ## How to Use This Repository
 
 ### Practical API Implementation Example
-*   🚀 **[Step-by-Step API Development Guide (BookstoreApi)](./dotnet-api-example/01-BookstoreApi/GUIDE.md)**: A complete, beginner-friendly guide to building a Clean Architecture ASP.NET Core API with SQLite/SQL Server, JWT auth, and repository pattern from scratch.
+*   🚀 **[Step-by-Step API Development Guide (BookstoreApi)](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md)**: A complete, beginner-friendly guide to building a Clean Architecture ASP.NET Core API with SQLite/SQL Server, JWT auth, and repository pattern from scratch.
 
 ### For Participants
 1. **Start with `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** to view the original official competition structure
