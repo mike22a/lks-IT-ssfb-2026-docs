@@ -17,47 +17,48 @@
 
 ## Strategi per Modul
 
-### API .NET (Sesi 1-2)
+### Review Awal (Sesi 1)
+**Fokus**: Review kemampuan yang sudah dimiliki
+- Sesi 1: Review Android Kotlin, Review Windows Forms, Identifikasi gap, Setup API environment
+
+**Strategi**:
+- Leverage kemampuan siswa yang sudah ada
+- Identifikasi gap antara kemampuan dan requirement kompetisi
+- Fokus pada areas yang perlu diperkuat
+- Setup environment untuk API .NET
+- Diskusi strategi integrasi API dengan Android dan Win Form
+
+### API .NET (Sesi 2-3)
 **Fokus**: Foundation dan Advanced
-- Sesi 1: Environment setup, RESTful concepts, EF basics
-- Sesi 2: CRUD implementation, business logic, error handling
+- Sesi 2: ASP.NET Core Web API basics, RESTful concepts, EF basics, basic CRUD
+- Sesi 3: Advanced CRUD, business logic, error handling, API documentation, integration
 
 **Strategi**:
 - Mulai dengan API sederhana sebelum kompleks
 - Fokus pada getting things running
 - Emphasize proper error handling dari awal
-- Gunakan Postman untuk testing
+- Gunakan Postman/Swagger untuk testing
+- Fokus pada integration dengan Android dan Win Form
 
-### Desktop Apps (.NET) (Sesi 3-5)
-**Fokus**: Foundation, Database Integration, Advanced Features
-- Sesi 3: Windows Forms basics, controls, event handling
-- Sesi 4: EF integration, CRUD, DataGridView
-- Sesi 5: Advanced SQL, LINQ, charts, search/filter
+### Win Form/Desktop Development (Sesi 4)
+**Fokus**: Database Integration dan Advanced Features
+- Sesi 4: EF di WinForm, CRUD, DataGridView, integration dengan API, advanced SQL, charts
 
 **Strategi**:
 - Leverage keahlian mentor di .NET
+- Leverage kemampuan Win Form yang sudah ada di siswa
 - Fokus pada integration dengan API yang sudah dibuat
 - Show DevExpress patterns jika relevan (mentor background)
 - Emphasize validation dan error handling
+- Compress topics karena siswa sudah punya dasar Win Form
 
-### Mobile Android (Sesi 6-7)
-**Fokus**: Foundation, API Integration
-- Sesi 6: Android Studio setup, Kotlin, Compose basics
-- Sesi 7: Retrofit, coroutines, repository, ViewModel
-
-**Strategi**:
-- Fokus pada Compose (modern approach)
-- Reuse API yang sudah dibuat
-- Show async operations dengan coroutines
-- Emphasize state management
-
-### Review & Practice (Sesi 8)
-**Fokus**: Review semua materi dan practice
-- Sesi 8: Review API, Desktop, Mobile; full integration practice; competition simulation
+### Review & Pemantapan (Sesi 5)
+**Fokus**: Review semua materi dan pemantapan
+- Sesi 5: Review API, Review Win Form, Review Android integration, full integration practice, competition simulation
 
 **Strategi**:
 - Review semua materi yang sudah dipelajari
-- Full integration practice
+- Full integration practice (API + Win Form + Android)
 - Time management practice
 - Competition simulation
 - Q&A dan clarification

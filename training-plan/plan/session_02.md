@@ -1,142 +1,244 @@
-# Sesi 2 - API .NET Advanced
+# Sesi 2 - Application Layer + Infrastructure Layer
 
 ## Informasi Sesi
 - **Durasi**: 2 jam (120 menit)
-- **Fokus**: API .NET
-- **Prerequisite**: Selesai Sesi 1, API basic sudah berjalan
+- **Fokus**: Implementasi Application Layer (DTOs, Services) dan Infrastructure Layer (EF, Repository)
+- **Prerequisite**: Selesai Sesi 1 — skeleton project sudah ada, minimal 3 entity sudah didefinisikan
 
 ## Tujuan Pembelajaran
-- [ ] Siswa dapat mengimplementasikan semua CRUD endpoints
-- [ ] Siswa dapat menulis business logic yang benar
-- [ ] Siswa dapat menangani error di API dengan baik
-- [ ] Siswa dapat menguji API dengan Postman/Swagger
-- [ ] Siswa dapat mendokumentasikan API dengan Swagger
+- [ ] Siswa dapat membuat DTO (Data Transfer Object) dan memahami perbedaannya dengan Entity
+- [ ] Siswa dapat membuat Service Interface dan implementasinya di Application layer
+- [ ] Siswa dapat setup EF Core di Infrastructure layer (DbContext, connection string)
+- [ ] Siswa dapat mengimplementasikan Generic Repository pattern
+- [ ] Siswa dapat menjalankan EF Migrations dan memverifikasi database terbuat
+- [ ] Siswa dapat menyusun Dependency Injection di Program.cs
 
 ## Materi (120 menit)
 
 ### Review Homework (15 menit)
-- Review database design siswa
-- Review GET endpoints yang sudah dibuat
-- Feedback dan koreksi
-- Q&A dari homework
+- Cek entity yang sudah dibuat (minimal 3 entity)
+- Cek ERD — verifikasi relationship antar entity masuk akal
+- Cek interface IRepository yang sudah dibuat
+- Feedback dan koreksi naming/property
+- Q&A dari studi Clean Architecture
 
-### Teori (20 menit)
-#### CRUD Operations (10 menit)
-- Create (POST) - Create new resource
-- Read (GET) - Retrieve resource(s)
-- Update (PUT/PATCH) - Update existing resource
-- Delete (DELETE) - Remove resource
-- Best practices untuk setiap operation
+### Application Layer (30 menit)
+#### DTOs — Teori & Demo (15 menit)
+- **Mengapa DTO?** Entity tidak boleh langsung diekspos ke API (ada field sensitif, ada field yang tidak perlu)
+- Jenis DTO:
+  - `XxxDto` — untuk response (data yang dikirim ke client)
+  - `CreateXxxRequest` — untuk body request POST
+  - `UpdateXxxRequest` — untuk body request PUT
+- Demo membuat DTO untuk 1 entity:
+```csharp
+// BusinessApp.Application/DTOs/CustomerDto.cs
+public class CustomerDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Phone { get; set; } = string.Empty;
+}
 
-#### Error Handling (10 menit)
-- HTTP status codes untuk error (400, 404, 500)
-- Error response format
-- Exception handling di C#
-- Validation errors vs system errors
+// BusinessApp.Application/DTOs/CreateCustomerRequest.cs
+public class CreateCustomerRequest
+{
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Phone { get; set; } = string.Empty;
+}
+```
 
-### Demo (30 menit)
-#### CRUD Implementation (15 menit)
-- Implementasi POST endpoint
-- Implementasi PUT endpoint
-- Implementasi DELETE endpoint
-- Test semua endpoints
+#### Service Interface & Implementation (15 menit)
+- Buat interface `ICustomerService` di Application/Interfaces:
+```csharp
+public interface ICustomerService
+{
+    Task<IEnumerable<CustomerDto>> GetAllAsync();
+    Task<CustomerDto?> GetByIdAsync(int id);
+    Task<CustomerDto> CreateAsync(CreateCustomerRequest request);
+    Task<CustomerDto> UpdateAsync(int id, UpdateCustomerRequest request);
+    Task DeleteAsync(int id);
+}
+```
+- Buat `CustomerService.cs` di Application/Services:
+  - Constructor inject `ICustomerRepository` (bukan DbContext langsung)
+  - Implementasi mapping manual Entity → DTO (tidak pakai AutoMapper)
+  - Throw exception jika entity tidak ditemukan
 
-#### Business Logic (10 menit)
-- Contoh business logic (misal: validation, calculation)
-- Implementasi di controller atau service layer
-- Test business logic
+### Infrastructure Layer (30 menit)
+#### EF Core Setup (10 menit)
+- Install NuGet packages di Infrastructure project:
+  ```
+  Microsoft.EntityFrameworkCore
+  Microsoft.EntityFrameworkCore.SqlServer
+  Microsoft.EntityFrameworkCore.Tools
+  ```
+- Buat `AppDbContext.cs`:
+```csharp
+// BusinessApp.Infrastructure/Data/AppDbContext.cs
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-#### Error Handling (5 menit)
-- Try-catch blocks
-- Return appropriate status codes
-- Error response format
+    public DbSet<Customer> Customers => Set<Customer>();
+    public DbSet<Product> Products => Set<Product>();
+    // ... tambahkan entity lainnya
 
-### Practice (40 menit)
-#### Latihan 1: Complete CRUD Endpoints (25 menit)
-- Implementasi POST untuk semua entities
-- Implementasi PUT untuk semua entities
-- Implementasi DELETE untuk semua entities
-- Test semua endpoints dengan Postman
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Konfigurasi relasi, constraints, seed data
+        base.OnModelCreating(modelBuilder);
+    }
+}
+```
 
-#### Latihan 2: Add Business Logic (15 menit)
-- Tambahkan minimal 1 business logic per entity
-- Misal: validation, calculation, conditional logic
-- Test business logic dengan Postman
+#### Generic Repository Implementation (15 menit)
+```csharp
+// BusinessApp.Infrastructure/Repositories/Repository.cs
+public class Repository<T> : IRepository<T> where T : class
+{
+    protected readonly AppDbContext _context;
+    protected readonly DbSet<T> _dbSet;
 
-### Review (15 menit)
-- Review hasil latihan siswa
-- Cek apakah semua CRUD endpoints berfungsi
-- Cek business logic implementation
-- Cek error handling
-- Feedback dan koreksi
-- Q&A
+    public Repository(AppDbContext context)
+    {
+        _context = context;
+        _dbSet = context.Set<T>();
+    }
+
+    public async Task<IEnumerable<T>> GetAllAsync() 
+        => await _dbSet.ToListAsync();
+
+    public async Task<T?> GetByIdAsync(int id) 
+        => await _dbSet.FindAsync(id);
+
+    public async Task AddAsync(T entity)
+    {
+        await _dbSet.AddAsync(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(T entity)
+    {
+        _dbSet.Update(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var entity = await GetByIdAsync(id);
+        if (entity != null)
+        {
+            _dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+    }
+}
+```
+
+#### EF Migration (5 menit)
+- Setup connection string di `appsettings.json` (API project)
+- Register DbContext di `Program.cs`
+- Jalankan migration:
+  ```bash
+  dotnet ef migrations add InitialCreate --project BusinessApp.Infrastructure --startup-project BusinessApp.API
+  dotnet ef database update --project BusinessApp.Infrastructure --startup-project BusinessApp.API
+  ```
+- Verifikasi di SSMS bahwa tabel terbuat
+
+### Dependency Injection Setup (15 menit)
+#### Register di Program.cs (10 menit)
+```csharp
+// BusinessApp.API/Program.cs
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register Repository
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+// Register Service
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+```
+
+#### Verify DI Chain (5 menit)
+- Build project dan pastikan tidak ada error
+- Diskusi: "Kenapa pakai Scoped bukan Singleton untuk DB context?"
+
+### Practice (20 menit)
+#### Latihan: Lengkapi untuk 2 Entity Lainnya (20 menit)
+- Buat DTO lengkap (Dto, CreateRequest, UpdateRequest) untuk 2 entity lainnya
+- Buat Service Interface + Implementation untuk 2 entity lainnya
+- Register semua di Program.cs
+- Pastikan build berhasil dan migration update berjalan
+
+### Review (10 menit)
+- Cek semua entity sudah ada DTO-nya
+- Cek semua service sudah terdaftar di DI
+- Cek database sudah terbuat di SSMS
+- Recap dependency rule: "Service tidak tahu DbContext, Repository tidak tahu Service"
+- Q&A dan preview sesi 3
 
 ## Homework
 
-### Tugas 1: Complete Error Handling
-- Implementasi proper error handling untuk semua endpoints
-- Return appropriate status codes
-- Create consistent error response format
-- Test error scenarios (invalid input, not found, etc.)
+### Tugas 1: Lengkapi Semua Service
+- Pastikan semua entity memiliki Service lengkap (GetAll, GetById, Create, Update, Delete)
+- Implementasi validasi dasar di service: null check, empty string check
+- Throw `NotFoundException` jika entity tidak ditemukan (buat custom exception di Domain)
 - **Deadline**: Sesi 3
 
-### Tugas 2: API Documentation dengan Swagger
-- Setup Swagger di project
-- Add XML comments untuk semua endpoints
-- Document request/response models
-- Test Swagger UI
+### Tugas 2: Seed Data
+- Tambahkan seed data di `OnModelCreating` menggunakan `modelBuilder.Entity<T>().HasData()`
+- Minimal 5 rekaman per entity
+- Jalankan migration baru: `dotnet ef migrations add SeedData`
+- Verifikasi data ada di SSMS
 - **Deadline**: Sesi 3
 
-### Tugas 3: Advanced Business Logic
-- Implementasi 2-3 business logic yang lebih kompleks
-- Misal: data aggregation, conditional updates, complex validation
-- Test dengan Postman
+### Tugas 3: Pelajari HTTP Status Codes
+- Pelajari: 200, 201, 400, 404, 409, 500 dan kapan digunakan
+- Catat pertanyaan untuk sesi 3
 - **Deadline**: Sesi 3
 
 ## Resources
 
 ### Documentation
-- [ASP.NET Core Web API CRUD](https://docs.microsoft.com/en-us/aspnet/core/web-api/)
-- [Swagger/OpenAPI Documentation](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swaggerswashbuckle)
-- [Error Handling in Web API](https://docs.microsoft.com/en-us/aspnet/core/web-api/handle-errors)
+- [EF Core — Getting Started](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app)
+- [EF Core — Migrations](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/)
+- [Repository Pattern](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)
 
 ### Code Examples
-- Sample CRUD controller
-- Sample business logic implementation
-- Sample error handling middleware
-
-### Reference Materials
-- `Docs/competition-requirements-specification.md` - Section 3.2.3 (Business Logic)
-- `Docs-id/competition-requirements-specification-id.md` - Versi Bahasa Indonesia
+- Sample AppDbContext configuration
+- Sample Generic Repository
+- Sample Service implementation dengan mapping manual
 
 ## Notes untuk Mentor
 
 ### Tips
-- Fokus pada consistency di semua endpoints
-- Emphasize proper error handling
-- Show how to test API systematically
-- Encourage use of Swagger for documentation
+- Tekankan: "DTO bukan Entity — entity untuk DB, DTO untuk API"
+- Jika siswa bertanya tentang AutoMapper: boleh, tapi ajarkan mapping manual dulu agar siswa paham alurnya
+- Cek apakah migration berhasil SEBELUM sesi selesai — ini sering jadi blocker
+- Gunakan SSMS untuk live demo "lihat tabel terbuat"
 
 ### Common Pitfalls
-- Tidak validasi input sebelum processing
-- Tidak return appropriate status codes
-- Business logic di controller (sebaiknya di service layer)
-- Error messages tidak helpful
+- Lupa tambahkan `Microsoft.EntityFrameworkCore.Design` ke API project (diperlukan untuk migration command)
+- Connection string salah format (terutama Windows Auth vs SQL Auth)
+- Service inject DbContext langsung, bukan melalui Repository interface
+- Migration dijalankan di project yang salah
 
 ### Troubleshooting
-- Cek apakah database connection masih berjalan
-- Verify request body format di Postman
-- Check browser console untuk error
-- Use debugger di Visual Studio
+- Error `No DbContext found`: pastikan `--startup-project` menunjuk ke API project
+- Error koneksi: cek SQL Server service berjalan, cek nama server di connection string
+- Build error: verifikasi semua project reference sudah benar
 
 ### Preparation untuk Sesi Berikutnya
-- Pastikan API siswa sudah lengkap dan berfungsi
-- Review API documentation siswa
-- Siapkan materi Windows Forms untuk sesi 3
-- Pastikan siswa sudah siap untuk transition ke desktop apps
+- Review service implementation siswa dari homework
+- Pastikan database dan seed data sudah ada
+- Siapkan contoh Controller lengkap dengan ApiResponse wrapper untuk demo sesi 3
+- Siapkan contoh Global Exception Handler Middleware
 
 ---
 
-**Sesi**: 2 dari 8  
-**Durasi**: 2 jam  
-**Fokus**: API .NET Advanced
+**Sesi**: 2 dari 5
+**Durasi**: 2 jam
+**Fokus**: Application Layer (DTO, Service) + Infrastructure Layer (EF, Repository)

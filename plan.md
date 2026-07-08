@@ -1,64 +1,69 @@
-# Rencana Pelatihan - 8 Sesi (16 Jam)
+# Rencana Pelatihan - 5 Sesi (10 Jam)
 
 ## Ikhtisar
 
-- **Total Sesi**: 8
+- **Total Sesi**: 5
 - **Durasi per Sesi**: 2 jam
-- **Total Waktu**: 16 jam
-- **Periode**: Setelah 6 Juli - Sebelum 27 Juli 2026
-- **Distribusi Materi**: 30% API .NET, 30% Desktop Apps, 30% Mobile Android, 10% Review
+- **Total Waktu**: 10 jam
+- **Periode**: 10 - 14 Juli 2026
+- **Distribusi Materi**: 10% Review Awal, 50% API .NET, 20% Win Form/Desktop, 20% Review & Pemantapan
+
+## Background Siswa
+
+- **Android Kotlin**: Sudah mahir
+- **Windows Forms**: Sudah pernah hands-on dan bisa membuat aplikasi sederhana
+- **Fokus Utama**: API .NET dan integrasi dengan aplikasi yang sudah dikuasai
 
 ## Distribusi Materi
 
 | Komponen | Jam | Sesi | Persentase |
 |----------|-----|------|------------|
-| API .NET | 4.8 jam | 2.4 sesi | 30% |
-| Desktop Apps | 4.8 jam | 2.4 sesi | 30% |
-| Mobile Android | 4.8 jam | 2.4 sesi | 30% |
-| Review & Practice | 1.6 jam | 0.8 sesi | 10% |
-| **Total** | **16 jam** | **8 sesi** | **100%** |
+| Review Awal (Android & Win Form) | 1 jam | 0.5 sesi | 10% |
+| API .NET | 5 jam | 2.5 sesi | 50% |
+| Win Form/Desktop Development | 2 jam | 1 sesi | 20% |
+| Review & Pemantapan | 2 jam | 1 sesi | 20% |
+| **Total** | **10 jam** | **5 sesi** | **100%** |
 
-**Catatan**: Distribusi di atas adalah target ideal. Dengan 8 sesi, distribusi aktual adalah:
-- Sesi 1-2: API .NET (4 jam = 25%)
-- Sesi 3-4: Desktop Apps (4 jam = 25%)
-- Sesi 5-6: Mobile Android (4 jam = 25%)
-- Sesi 7-8: Review & Practice (4 jam = 25%)
-
-Distribusi dapat disesuaikan setelah meeting dengan siswa berdasarkan jumlah pertemuan aktual yang disepakati.
+**Distribusi Aktual dengan 5 Sesi**:
+- Sesi 1: Review Awal (Android & Win Form) - 2 jam (20%)
+- Sesi 2-3: API .NET - 4 jam (40%)
+- Sesi 4: Win Form/Desktop Development - 2 jam (20%)
+- Sesi 5: Review & Pemantapan - 2 jam (20%)
 
 ## Distribusi Sesi
 
-### Sesi 1: API .NET - Foundation
+### Sesi 1: Review Awal (Android & Win Form)
+- **Durasi**: 2 jam
+- **Fokus**: Review kemampuan yang sudah dimiliki
+- **Topik**:
+  - Review Android Kotlin (Jetpack Compose, Retrofit, Coroutines)
+  - Review Windows Forms (Controls, Event Handling, CRUD)
+  - Identifikasi gap antara kemampuan dan requirement kompetisi
+  - Setup environment untuk API .NET
+  - Diskusi strategi integrasi API dengan Android dan Win Form
+
+### Sesi 2: API .NET - Foundation
 - **Durasi**: 2 jam
 - **Fokus**: API .NET
 - **Topik**:
-  - Environment setup (Visual Studio, .NET 8, SQL Server)
   - ASP.NET Core Web API basics
   - RESTful API concepts
   - Database design basics
   - Entity Framework introduction
+  - Create basic CRUD endpoints
 
-### Sesi 2: API .NET - Advanced
+### Sesi 3: API .NET - Advanced
 - **Durasi**: 2 jam
 - **Fokus**: API .NET
 - **Topik**:
-  - CRUD endpoints implementation
+  - Advanced CRUD endpoints
   - Business logic implementation
   - Error handling di API
   - API testing dengan Postman/Swagger
   - API documentation
+  - Integration dengan Android dan Win Form
 
-### Sesi 3: Desktop Apps - Foundation
-- **Durasi**: 2 jam
-- **Fokus**: Desktop Apps (.NET)
-- **Topik**:
-  - Windows Forms basics
-  - Form design dan layout
-  - Common controls (Button, TextBox, ComboBox, etc.)
-  - Event handling
-  - Form navigation
-
-### Sesi 4: Desktop Apps - Database Integration
+### Sesi 4: Win Form/Desktop Development
 - **Durasi**: 2 jam
 - **Fokus**: Desktop Apps (.NET)
 - **Topik**:
@@ -67,100 +72,62 @@ Distribusi dapat disesuaikan setelah meeting dengan siswa berdasarkan jumlah per
   - CRUD operations di desktop
   - DataGridView implementation
   - Data binding
-
-### Sesi 5: Desktop Apps - Advanced Features
-- **Durasi**: 2 jam
-- **Fokus**: Desktop Apps (.NET)
-- **Topik**:
+  - Integration dengan API yang sudah dibuat
   - Advanced SQL queries (JOIN, aggregate)
-  - LINQ to Entities
   - Data visualization (charts)
-  - Search dan filter functionality
-  - Input validation
 
-### Sesi 6: Mobile Android - Foundation
+### Sesi 5: Review & Pemantapan
 - **Durasi**: 2 jam
-- **Fokus**: Mobile Android
-- **Topik**:
-  - Android Studio setup
-  - Kotlin basics
-  - Jetpack Compose introduction
-  - Composable functions
-  - State management basics
-
-### Sesi 7: Mobile Android - API Integration
-- **Durasi**: 2 jam
-- **Fokus**: Mobile Android
-- **Topik**:
-  - Retrofit library setup
-  - API interface definition
-  - Coroutines untuk async operations
-  - Repository pattern
-  - ViewModel integration
-
-### Sesi 8: Review & Practice
-- **Durasi**: 2 jam
-- **Fokus**: Review semua materi dan practice
+- **Fokus**: Review semua materi dan pemantapan
 - **Topik**:
   - Review API .NET concepts dan implementation
-  - Review Desktop Apps concepts dan implementation
-  - Review Mobile Android concepts dan implementation
-  - Full integration practice
+  - Review Win Form/Desktop concepts dan integration
+  - Review Android integration dengan API
+  - Full integration practice (API + Win Form + Android)
   - Time management practice
   - Competition simulation
   - Q&A dan clarification
 
 ## Timeline Pelatihan
 
-### Minggu 1 (Sesi 1-3)
-- **Sesi 1**: API .NET Foundation
-- **Sesi 2**: API .NET Advanced
-- **Sesi 3**: Desktop Apps Foundation
+### 10 Juli 2026 (Jumat)
+- **Sesi 1**: Review Awal (Android & Win Form)
 
-### Minggu 2 (Sesi 4-6)
-- **Sesi 4**: Desktop Apps Database Integration
-- **Sesi 5**: Desktop Apps Advanced Features
-- **Sesi 6**: Mobile Android Foundation
+### 11 Juli 2026 (Sabtu)
+- **Sesi 2**: API .NET Foundation
 
-### Minggu 3 (Sesi 7-8)
-- **Sesi 7**: Mobile Android API Integration
-- **Sesi 8**: Review & Practice
+### 12 Juli 2026 (Minggu)
+- **Sesi 3**: API .NET Advanced
+
+### 13 Juli 2026 (Senin)
+- **Sesi 4**: Win Form/Desktop Development
+
+### 14 Juli 2026 (Selasa)
+- **Sesi 5**: Review & Pemantapan
 
 ## Prerequisites untuk Setiap Sesi
 
 ### Sesi 1
 - Tidak ada prerequisite (sesi pertama)
-- Software harus sudah diinstal sebelum sesi
+- Software harus sudah diinstal sebelum sesi (Visual Studio, .NET 8, SQL Server, Android Studio)
 
 ### Sesi 2
 - Selesai Sesi 1
-- Pemahaman dasar API dan database
+- Gap antara kemampuan dan requirement sudah diidentifikasi
 
 ### Sesi 3
 - Selesai Sesi 2
-- API sudah berjalan dan dapat diuji
+- API foundation sudah dipelajari
 
 ### Sesi 4
 - Selesai Sesi 3
-- Pemahaman dasar Windows Forms
+- API sudah berjalan dan dapat diuji
+- Pemahaman dasar Windows Forms (siswa sudah punya)
 
 ### Sesi 5
 - Selesai Sesi 4
-- CRUD desktop sudah berjalan
-
-### Sesi 6
-- Selesai Sesi 5
-- Desktop apps sudah lengkap
-- Android Studio sudah diinstal
-
-### Sesi 7
-- Selesai Sesi 6
-- Pemahaman dasar Kotlin dan Compose
-
-### Sesi 8
-- Selesai Sesi 7
-- API integration di mobile sudah berjalan
-- Semua materi sebelumnya sudah dipelajari
+- API dan Win Form integration sudah berjalan
+- Android integration dengan API sudah dipelajari
 
 ## Homework Strategy
 
@@ -173,9 +140,10 @@ Setiap sesi memiliki homework yang dirancang untuk:
 ## Evaluasi dan Monitoring
 
 ### Checkpoint Evaluasi
-- **Setelah Sesi 2**: API readiness check
-- **Setelah Sesi 5**: Desktop apps readiness check
-- **Setelah Sesi 8**: Final readiness check
+- **Setelah Sesi 1**: Gap identification dan baseline assessment
+- **Setelah Sesi 3**: API readiness check
+- **Setelah Sesi 4**: Win Form integration check
+- **Setelah Sesi 5**: Final readiness check
 
 ### Metrics
 - Completion rate homework
@@ -185,14 +153,17 @@ Setiap sesi memiliki homework yang dirancang untuk:
 
 ## Catatan Penting
 
-- Plan bersifat fleksibel dan dapat diubah setelah meeting dengan siswa
-- Fokus pada hands-on practice
+- Plan disesuaikan berdasarkan kemampuan siswa yang sudah ada (Android Kotlin dan Win Form)
+- Fokus utama pada API .NET dan integrasi dengan aplikasi yang sudah dikuasai
+- Plan bersifat fleksibel dan dapat diubah jika diperlukan
+- Fokus pada hands-on practice dan integration
 - Validasi dan error handling tidak boleh diabaikan
 - Time management sangat penting
 - Homework krusial untuk asynchronous learning
 
 ---
 
-**Versi Dokumen**: 1.0  
-**Status**: Initial Plan  
-**Total Durasi**: 16 jam (8 sesi × 2 jam)
+**Versi Dokumen**: 2.0  
+**Status**: Updated Plan (disesuaikan dengan kemampuan siswa)  
+**Total Durasi**: 10 jam (5 sesi × 2 jam)  
+**Periode**: 10 - 14 Juli 2026

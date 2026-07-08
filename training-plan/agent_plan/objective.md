@@ -41,40 +41,43 @@ Mempersiapkan siswa untuk menghadapi kompetisi **LKS DIKMEN Nasional 2026** dala
 ## Timeline
 
 - **Tanggal Kompetisi**: 27 Juli 2026 (earliest)
-- **Meeting Persiapan**: 6 Juli 2026
-- **Periode Pelatihan**: Setelah 6 Juli - Sebelum 27 Juli (±20 hari)
-- **Total Sesi**: 8 sesi
+- **Periode Pelatihan**: 10 - 14 Juli 2026
+- **Total Sesi**: 5 sesi
 - **Durasi per Sesi**: 2 jam
-- **Total Waktu**: 16 jam
+- **Total Waktu**: 10 jam
 
 ## Distribusi Materi
 
-### 30% API .NET (±4.8 jam)
+### 10% Review Awal (±1 jam)
+- Review Android Kotlin (Jetpack Compose, Retrofit, Coroutines)
+- Review Windows Forms (Controls, Event Handling, CRUD)
+- Identifikasi gap antara kemampuan dan requirement kompetisi
+- Setup environment untuk API .NET
+- Diskusi strategi integrasi API dengan Android dan Win Form
+
+### 50% API .NET (±5 jam)
 - RESTful API development
 - ASP.NET Core Web API
 - Database integration
 - Business logic implementation
 - Error handling di API
+- Integration dengan Android dan Win Form
 
-### 30% Desktop Apps (.NET) (±4.8 jam)
-- Windows Forms development
-- Entity Framework
-- CRUD operations
+### 20% Win Form/Desktop Development (±2 jam)
+- Entity Framework di Windows Forms
+- Database connection management
+- CRUD operations di desktop
+- DataGridView implementation
+- Data binding
+- Integration dengan API
+- Advanced SQL queries (JOIN, aggregate)
 - Data visualization (charts)
-- Advanced SQL queries
-- Validation & security
 
-### 30% Mobile Android (±4.8 jam)
-- Android Studio setup
-- Kotlin basics
-- Jetpack Compose
-- API integration di mobile
-- Mobile UI development
-- CRUD di mobile
-
-### 10% Review & Practice (±1.6 jam)
-- Review semua materi
-- Full integration practice
+### 20% Review & Pemantapan (±2 jam)
+- Review API .NET concepts dan implementation
+- Review Win Form/Desktop concepts dan integration
+- Review Android integration dengan API
+- Full integration practice (API + Win Form + Android)
 - Time management practice
 - Competition simulation
 - Q&A dan clarification
