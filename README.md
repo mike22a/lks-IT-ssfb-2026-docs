@@ -241,6 +241,7 @@ This document expands on the kisi-kisi with implementation details:
 ### Practical API Implementation Example
 *   🚀 **[Step-by-Step API Development Guide (BookstoreApi - Level 1)](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md)**: A complete, beginner-friendly guide to building a Clean Architecture ASP.NET Core API with SQLite/SQL Server, JWT auth, and repository pattern from scratch.
 *   🚀 **[Step-by-Step API Development Guide (LibraryApi - Level 2)](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md)**: A medium-level guide demonstrating role-based auth (Admin/Librarian), transactional inventory updates, automatic fine calculations, and advanced repository querying.
+*   🚀 **[Step-by-Step API Development Guide (HotelApi - Level 3)](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md)**: An advanced guide demonstrating a full reservation state machine, date-range availability queries, 6 entities, PATCH state transitions, and Admin-only revenue/occupancy reports.
 
 ### For Participants
 1. **Start with `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** to view the original official competition structure

@@ -241,6 +241,7 @@ Dokumen ini mengembangkan kisi-kisi dengan detail implementasi:
 ### Contoh Implementasi API Praktis
 *   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (BookstoreApi - Level 1)](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md)**: Panduan lengkap dan ramah pemula untuk membangun Clean Architecture ASP.NET Core API dengan SQLite/SQL Server, autentikasi JWT, dan pola repository dari nol.
 *   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (LibraryApi - Level 2)](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md)**: Panduan tingkat menengah yang mendemonstrasikan autentikasi berbasis peran (Admin/Librarian), pembaruan inventori transaksional, kalkulasi denda otomatis, dan query repository tingkat lanjut.
+*   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (HotelApi - Level 3)](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md)**: Panduan tingkat lanjut yang mendemonstrasikan state machine reservasi penuh, query ketersediaan berbasis rentang tanggal, 6 entitas, transisi status dengan PATCH, dan laporan revenue/occupancy khusus Admin.
 
 ### Untuk Peserta
 1. **Mulai dengan `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** untuk melihat struktur kompetisi resmi asli
