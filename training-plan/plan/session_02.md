@@ -212,6 +212,11 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 - Sample Generic Repository
 - Sample Service implementation dengan mapping manual
 
+### Referensi Project Contoh Lengkap (Step-by-Step)
+- 📖 **[01-BookstoreApi-GUIDE.md](../dotnet-api-example/01-BookstoreApi-GUIDE.md)** — Langkah 4 (Domain) & Langkah 5 (Application Layer)
+- 📖 **[02-LibraryApi-GUIDE.md](../dotnet-api-example/02-LibraryApi-GUIDE.md)** — Contoh Entity dengan relasi dan DTO per modul
+- 🔧 **[mentor_cheatsheet.md](../agent_plan/mentor_cheatsheet.md)** — Template cepat ApiResponse, EF commands
+
 ## Notes untuk Mentor
 
 ### Tips

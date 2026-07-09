@@ -173,6 +173,15 @@
 - **Android Studio** (Meerkat / terbaru) dengan emulator AVD yang sudah terkonfigurasi
 - **Android SDK API Level 34** (sesuai requirement kompetisi)
 
+### Referensi Project Contoh (Step-by-Step Guide)
+| Level | Guide | Domain | Port |
+|-------|-------|--------|------|
+| Level 1 - Dasar | [`01-BookstoreApi-GUIDE.md`](../dotnet-api-example/01-BookstoreApi-GUIDE.md) | Toko Buku | 5001 |
+| Level 2 - Menengah | [`02-LibraryApi-GUIDE.md`](../dotnet-api-example/02-LibraryApi-GUIDE.md) | Perpustakaan | 5002 |
+| Level 3 - Lanjut | [`03-HotelApi-GUIDE.md`](../dotnet-api-example/03-HotelApi-GUIDE.md) | Hotel | 5003 |
+
+Semua seed account menggunakan password: `password123`
+
 ### Clean Architecture Reference
 ```
 Solution: BusinessApp

@@ -279,6 +279,11 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 - Sample Global Exception Middleware
 - Sample Custom Exceptions di Domain layer
 
+### Referensi Project Contoh Lengkap (Step-by-Step)
+- 📖 **[01-BookstoreApi-GUIDE.md](../dotnet-api-example/01-BookstoreApi-GUIDE.md)** — Langkah 7 (API Layer + Controllers + Middleware)
+- 📖 **[03-HotelApi-GUIDE.md](../dotnet-api-example/03-HotelApi-GUIDE.md)** — Langkah 7: Contoh PATCH endpoints untuk state machine
+- 🔧 **[mentor_cheatsheet.md](../agent_plan/mentor_cheatsheet.md)** — Template GlobalExceptionHandler (.NET 8 `IExceptionHandler`) & Controller standar
+
 ## Notes untuk Mentor
 
 ### Tips

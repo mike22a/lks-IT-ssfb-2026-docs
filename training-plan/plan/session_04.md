@@ -299,6 +299,10 @@ Siswa memilih area mana yang perlu diperdalam:
 - `10.0.2.2` adalah alamat localhost saat diakses dari Android Emulator
 - Jika menggunakan device fisik, gunakan IP address komputer di jaringan yang sama
 
+### Referensi Project Contoh & Cheat Sheet
+- 🔧 **[mentor_cheatsheet.md](../agent_plan/mentor_cheatsheet.md)** — Bagian 10 (Retrofit setup) & Bagian 11 (HttpClient WinForm)
+- 📖 **[01-BookstoreApi-GUIDE.md](../dotnet-api-example/01-BookstoreApi-GUIDE.md)** — Referensi struktur API yang digunakan
+
 ## Notes untuk Mentor
 
 ### Tips
