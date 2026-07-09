@@ -28,31 +28,31 @@ dotnet add src/BusinessApp.Application reference src/BusinessApp.Domain
 dotnet add src/BusinessApp.Infrastructure reference src/BusinessApp.Domain src/BusinessApp.Application
 dotnet add src/BusinessApp.API reference src/BusinessApp.Application src/BusinessApp.Infrastructure
 
+# Install NuGet packages
+# -- Application
+dotnet add src/BusinessApp.Application package FluentValidation --version 11.11.0
+
+# -- Infrastructure
+dotnet add src/BusinessApp.Infrastructure package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.14
+dotnet add src/BusinessApp.Infrastructure package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.14
+dotnet add src/BusinessApp.Infrastructure package Microsoft.EntityFrameworkCore.Tools --version 8.0.14
+dotnet add src/BusinessApp.Infrastructure package BCrypt.Net-Next --version 4.2.0
+dotnet add src/BusinessApp.Infrastructure package System.IdentityModel.Tokens.Jwt --version 8.9.0
+dotnet add src/BusinessApp.Infrastructure package Microsoft.IdentityModel.Tokens --version 8.9.0
+dotnet add src/BusinessApp.Infrastructure package Microsoft.Extensions.Configuration.Abstractions --version 8.0.0
+
+# -- API
+dotnet add src/BusinessApp.API package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.14
+dotnet add src/BusinessApp.API package Microsoft.EntityFrameworkCore.Design --version 8.0.14
+dotnet add src/BusinessApp.API package Swashbuckle.AspNetCore --version 6.9.0
+
 # Verifikasi build
 dotnet build BusinessApp.sln
 ```
 
 ---
 
-## 2. Install Paket NuGet (copy-paste saat demo)
-
-```bash
-# Infrastructure
-dotnet add src/BusinessApp.Infrastructure package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.14
-dotnet add src/BusinessApp.Infrastructure package Microsoft.EntityFrameworkCore.Tools --version 8.0.14
-dotnet add src/BusinessApp.Infrastructure package BCrypt.Net-Next --version 4.2.0
-dotnet add src/BusinessApp.Infrastructure package System.IdentityModel.Tokens.Jwt --version 8.9.0
-dotnet add src/BusinessApp.Infrastructure package Microsoft.IdentityModel.Tokens --version 8.9.0
-
-# API
-dotnet add src/BusinessApp.API package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.14
-dotnet add src/BusinessApp.API package Microsoft.EntityFrameworkCore.Design --version 8.0.14
-dotnet add src/BusinessApp.API package Swashbuckle.AspNetCore --version 6.9.0
-```
-
----
-
-## 3. EF Core Migration Commands
+## 2. EF Core Migration Commands
 
 ```bash
 # Buat migration pertama
