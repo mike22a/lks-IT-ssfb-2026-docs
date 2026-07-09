@@ -1,6 +1,8 @@
-# Ignore .report folder
+# Ignore the example code repository (tracked as a separate git repo)
 .report/
 dotnet-api-example/
+# But DO track the step-by-step guides inside training-plan/
+!training-plan/dotnet-api-example/
 
 # Ignore app-blueprint (cloned repository)
 app-blueprint/
