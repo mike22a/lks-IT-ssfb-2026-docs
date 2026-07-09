@@ -16,61 +16,34 @@ This repository contains comprehensive documentation and analysis for the **LKS 
 
 ```
 lks-IT-ssfb-2026-docs/
-├── pdf/
-│   ├── lks-it software solution for bussiness-deskripsi-teknis.pdf  # Original official technical description PDF
-│   └── lks-it software solution for bussiness-kisi-kisi.pdf          # Original official competition requirements PDF
-│   └── previous-year/                                                      # Previous year competition papers
-├── txt/
-│   ├── deskripsi-teknis.txt                    # Text copied from original PDF (technical description)
-│   ├── kisi-kisi.txt                            # Text copied from original PDF (competition requirements)
-│   ├── standar-software.txt                    # Standard software requirements
-│   └── training-structure-folder.md             # Training plan folder structure
-├── Docs/
-│   ├── detailed-breakdown.md                    # Detailed analysis of technical description
-│   └── competition-requirements-specification.md  # Detailed technical specifications
-├── Docs-id/
-│   ├── detailed-breakdown-id.md                # Indonesian translation of detailed-breakdown.md
-│   └── competition-requirements-specification-id.md  # Indonesian translation of competition-requirements-specification.md
-├── training-plan/
-│   ├── agent_plan/
-│   │   ├── objective.md                        # Training objectives and success criteria
-│   │   ├── training_strategy.md                # Training methodology and strategy
-│   │   ├── evaluation_criteria.md              # Evaluation criteria and checkpoints
-│   │   └── mentor_notes.md                     # Notes for mentor per session
-│   ├── plan/
-│   │   ├── session_01.md                       # Session 1: API .NET Foundation
-│   │   ├── session_02.md                       # Session 2: API .NET Advanced
-│   │   ├── session_03.md                       # Session 3: Desktop Apps Foundation
-│   │   ├── session_04.md                       # Session 4: Desktop Apps Database Integration
-│   │   ├── session_05.md                       # Session 5: Desktop Apps Advanced Features
-│   │   ├── session_06.md                       # Session 6: Mobile Android Foundation
-│   │   ├── session_07.md                       # Session 7: Mobile Android API Integration
-│   │   └── session_08.md                       # Session 8: Review & Practice
-│   ├── assignments/
-│   │   ├── hw_01.md                            # Homework for Session 1
-│   │   ├── hw_02.md                            # Homework for Session 2
-│   │   ├── hw_03.md                            # Homework for Session 3
-│   │   ├── hw_04.md                            # Homework for Session 4
-│   │   ├── hw_05.md                            # Homework for Session 5
-│   │   ├── hw_06.md                            # Homework for Session 6
-│   │   ├── hw_07.md                            # Homework for Session 7
-│   │   └── hw_08.md                            # Homework for Session 8
-│   └── mock_exam/
-│       ├── mock_exam_01.md                     # Mock exam: API .NET & Desktop Apps
-│       └── mock_exam_02.md                     # Mock exam: Mobile Android Full Integration
-├── daily-plans/
-│   ├── session-01.md                           # Legacy session files (moved to training-plan/plan/)
-│   ├── session-02.md
-│   ├── session-03.md
-│   ├── session-04.md
-│   ├── session-05.md
-│   ├── session-06.md
-│   ├── session-07.md
-│   └── session-08.md
-├── plan.md                                      # Overall training plan overview
-├── README.md                                    # This file
-├── README-id.md                                 # Indonesian version of README.md
-└── .gitignore                                   # Git ignore rules
+├── pdf/                         # Official competition PDFs
+├── txt/                         # Searchable text copies
+├── Docs/                        # English analysis documents
+├── Docs-id/                     # Indonesian analysis documents
+├── training-plan/               # ← MAIN TRAINING CONTENT
+│   ├── agent_plan/              # Strategy & mentor documents
+│   │   ├── objective.md         # Training goals & KPIs
+│   │   ├── training_strategy.md # Methodology (20% theory, 30% demo, 40% practice)
+│   │   ├── evaluation_criteria.md # Checkpoints & scoring
+│   │   ├── mentor_notes.md      # Per-session prep & tips for mentor
+│   │   └── mentor_cheatsheet.md # Quick-reference: commands, templates, checklist
+│   ├── plan/                    # Session-by-session plans
+│   │   ├── session_01.md        # Sesi 1: API Kickoff + Clean Architecture
+│   │   ├── session_02.md        # Sesi 2: Application + Infrastructure Layer
+│   │   ├── session_03.md        # Sesi 3: Controllers + Business Logic
+│   │   ├── session_04.md        # Sesi 4: WinForm + Android Integration
+│   │   └── session_05.md        # Sesi 5: Full Integration + Competition Simulation
+│   ├── assignments/             # Homework per session
+│   │   ├── hw_01.md  → hw_05.md # Homework after each session
+│   ├── mock_exam/               # Practice exams (competition simulation)
+│   │   ├── mock_exam_01.md      # Mock: API + Desktop Apps (3 hours)
+│   │   └── mock_exam_02.md      # Mock: Mobile Android Full Integration (3 hours)
+│   └── dotnet-api-example/      # Step-by-step API implementation guides
+│       ├── 01-BookstoreApi-GUIDE.md  # Level 1: Basic Clean Architecture
+│       ├── 02-LibraryApi-GUIDE.md   # Level 2: Role-based auth + business rules
+│       └── 03-HotelApi-GUIDE.md     # Level 3: State machine + reports
+├── README.md                    # This file (English)
+└── README-id.md                 # Indonesian version
 ```
 
 ## Document Descriptions
@@ -236,34 +209,71 @@ This document expands on the kisi-kisi with implementation details:
 - **Day 2**: Modules C & D (6 hours total)
 - **Day 3**: Closing and evaluation (1 hour)
 
-## How to Use This Repository
+## 🎓 Training Hub
 
-### Practical API Implementation Example
-*   🚀 **[Step-by-Step API Development Guide (BookstoreApi - Level 1)](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md)**: A complete, beginner-friendly guide to building a Clean Architecture ASP.NET Core API with SQLite/SQL Server, JWT auth, and repository pattern from scratch.
-*   🚀 **[Step-by-Step API Development Guide (LibraryApi - Level 2)](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md)**: A medium-level guide demonstrating role-based auth (Admin/Librarian), transactional inventory updates, automatic fine calculations, and advanced repository querying.
-*   🚀 **[Step-by-Step API Development Guide (HotelApi - Level 3)](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md)**: An advanced guide demonstrating a full reservation state machine, date-range availability queries, 6 entities, PATCH state transitions, and Admin-only revenue/occupancy reports.
+> All training materials are located in the [`training-plan/`](./training-plan/) folder.
+> Start from the API guides below, then follow the session plans and homework in order.
+
+---
+
+### 📚 Step-by-Step API Guides (Start Here)
+
+Three progressively complex projects — each a complete, runnable example of Clean Architecture:
+
+| Level | Guide | Complexity | Key Features |
+|-------|-------|------------|--------------|
+| Level 1 | [BookstoreApi Guide](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md) | ⭐ Basic | CRUD, JWT Auth, Repository Pattern |
+| Level 2 | [LibraryApi Guide](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md) | ⭐⭐ Medium | Role-based Auth, Fine Calculation, Stock Management |
+| Level 3 | [HotelApi Guide](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md) | ⭐⭐⭐ Advanced | State Machine, Date Availability, Revenue Reports |
+
+---
+
+### 🗓️ Training Sessions (5 × 2 Hours)
+
+| Session | Topic | Session Plan | Homework |
+|---------|-------|--------------|----------|
+| Sesi 1 (10 Jul) | API Kickoff + Clean Architecture Foundation | [session_01.md](./training-plan/plan/session_01.md) | [hw_01.md](./training-plan/assignments/hw_01.md) |
+| Sesi 2 (11 Jul) | Application + Infrastructure Layer | [session_02.md](./training-plan/plan/session_02.md) | [hw_02.md](./training-plan/assignments/hw_02.md) |
+| Sesi 3 (12 Jul) | Controllers + Business Logic + Error Handling | [session_03.md](./training-plan/plan/session_03.md) | [hw_03.md](./training-plan/assignments/hw_03.md) |
+| Sesi 4 (13 Jul) | WinForm + Android Kotlin Integration | [session_04.md](./training-plan/plan/session_04.md) | [hw_04.md](./training-plan/assignments/hw_04.md) |
+| Sesi 5 (14 Jul) | Full Integration + Competition Simulation | [session_05.md](./training-plan/plan/session_05.md) | [hw_05.md](./training-plan/assignments/hw_05.md) |
+
+---
+
+### 🏁 Practice Exams (Competition Simulation)
+
+| Mock Exam | Focus | Duration |
+|-----------|-------|----------|
+| [Mock Exam 01](./training-plan/mock_exam/mock_exam_01.md) | API (Clean Architecture) + Desktop WinForm | 3 hours |
+| [Mock Exam 02](./training-plan/mock_exam/mock_exam_02.md) | Mobile Android Full Integration | 3 hours |
+
+---
+
+### 🧑‍🏫 Mentor Resources
+
+| Document | Purpose |
+|----------|---------|
+| [mentor_cheatsheet.md](./training-plan/agent_plan/mentor_cheatsheet.md) | 🔑 One-page reference: all CLI commands, code templates, competition checklist |
+| [mentor_notes.md](./training-plan/agent_plan/mentor_notes.md) | Per-session prep tips, common pitfalls, troubleshooting |
+| [training_strategy.md](./training-plan/agent_plan/training_strategy.md) | Training methodology & adaptation strategy |
+| [evaluation_criteria.md](./training-plan/agent_plan/evaluation_criteria.md) | Checkpoints, scoring rubric, pass/fail criteria |
+| [objective.md](./training-plan/agent_plan/objective.md) | Training goals, KPIs, success criteria |
+
+---
 
 ### For Participants
 1. **Start with `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** to view the original official competition structure
 2. **Review `pdf/lks-it software solution for bussiness-kisi-kisi.pdf`** to view the original official competition requirements
-3. **Reference `txt/deskripsi-teknis.txt`** for searchable text copy of the technical description
-4. **Reference `txt/kisi-kisi.txt`** for searchable text copy of the competition requirements
-5. **Study `Docs/detailed-breakdown.md`** for comprehensive analysis and preparation guidelines
-6. **Reference `Docs/competition-requirements-specification.md`** for detailed implementation examples
+3. **Study `Docs/detailed-breakdown.md`** for comprehensive analysis and preparation guidelines
+4. **Follow the session plans** in order: `session_01.md` → `session_05.md`
+5. **Complete each homework** before the next session
+6. **Practice with mock exams** after Sesi 5 to simulate competition conditions
 
 ### For Mentors/Coaches
-1. Use `Docs/detailed-breakdown.md` to create training curriculum
-2. Use `Docs/competition-requirements-specification.md` for technical guidance
-3. Follow the preparation checklist to ensure comprehensive training
-4. Focus on key success factors and common pitfalls
-
-### Quick Reference
-- **Competition Overview**: See `Docs/detailed-breakdown.md` Section 1
-- **Module Details**: See `Docs/detailed-breakdown.md` Section 3
-- **Technical Requirements**: See `Docs/detailed-breakdown.md` Section 6
-- **Schedule**: See `Docs/detailed-breakdown.md` Section 8
-- **Assessment Criteria**: See `Docs/competition-requirements-specification.md` Section 6
-- **Code Examples**: See `Docs/competition-requirements-specification.md` Module sections
+1. 📋 Open **[mentor_cheatsheet.md](./training-plan/agent_plan/mentor_cheatsheet.md)** — keep it open during every session for fast copy-paste
+2. 📝 Read **[mentor_notes.md](./training-plan/agent_plan/mentor_notes.md)** before each session for per-session tips
+3. 📖 Show students the **API Guides** as living references they can run and modify
+4. ⏱️ Use **Mock Exams** in Sesi 5 with a real timer to simulate competition pressure
 
 ## Key Success Factors
 
@@ -331,5 +341,6 @@ For official competition information, please contact the LKS DIKMEN National org
 
 ---
 
-**Last Updated**: 2026  
+**Last Updated**: 9 Juli 2026
 **Competition**: LKS DIKMEN National 2026 - IT Software Solution for Business
+**Training Period**: 10 – 14 Juli 2026 | **Competition Day**: 27 Juli 2026 (earliest)

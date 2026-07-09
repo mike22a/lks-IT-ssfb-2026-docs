@@ -16,61 +16,34 @@ Repository ini berisi dokumentasi komprehensif dan analisis untuk kompetisi **LK
 
 ```
 lks-IT-ssfb-2026-docs/
-├── pdf/
-│   ├── lks-it software solution for bussiness-deskripsi-teknis.pdf  # PDF deskripsi teknis resmi asli
-│   └── lks-it software solution for bussiness-kisi-kisi.pdf          # PDF persyaratan kompetisi resmi asli
-│   └── previous-year/                                                      # Soal-soal kompetisi tahun sebelumnya
-├── txt/
-│   ├── deskripsi-teknis.txt                    # Teks disalin dari PDF asli (deskripsi teknis)
-│   ├── kisi-kisi.txt                            # Teks disalin dari PDF asli (persyaratan kompetisi)
-│   ├── standar-software.txt                    # Persyaratan software standar
-│   └── training-structure-folder.md             # Struktur folder rencana pelatihan
-├── Docs/
-│   ├── detailed-breakdown.md                    # Analisis detail deskripsi teknis
-│   └── competition-requirements-specification.md  # Spesifikasi teknis detail
-├── Docs-id/
-│   ├── detailed-breakdown-id.md                # Terjemahan Bahasa Indonesia dari detailed-breakdown.md
-│   └── competition-requirements-specification-id.md  # Terjemahan Bahasa Indonesia dari competition-requirements-specification.md
-├── training-plan/
-│   ├── agent_plan/
-│   │   ├── objective.md                        # Tujuan pelatihan dan kriteria keberhasilan
-│   │   ├── training_strategy.md                # Metodologi dan strategi pelatihan
-│   │   ├── evaluation_criteria.md              # Kriteria penilaian dan checkpoint
-│   │   └── mentor_notes.md                     # Catatan untuk mentor per sesi
-│   ├── plan/
-│   │   ├── session_01.md                       # Sesi 1: API .NET Foundation
-│   │   ├── session_02.md                       # Sesi 2: API .NET Advanced
-│   │   ├── session_03.md                       # Sesi 3: Desktop Apps Foundation
-│   │   ├── session_04.md                       # Sesi 4: Desktop Apps Database Integration
-│   │   ├── session_05.md                       # Sesi 5: Desktop Apps Advanced Features
-│   │   ├── session_06.md                       # Sesi 6: Mobile Android Foundation
-│   │   ├── session_07.md                       # Sesi 7: Mobile Android API Integration
-│   │   └── session_08.md                       # Sesi 8: Review & Practice
-│   ├── assignments/
-│   │   ├── hw_01.md                            # Tugas untuk Sesi 1
-│   │   ├── hw_02.md                            # Tugas untuk Sesi 2
-│   │   ├── hw_03.md                            # Tugas untuk Sesi 3
-│   │   ├── hw_04.md                            # Tugas untuk Sesi 4
-│   │   ├── hw_05.md                            # Tugas untuk Sesi 5
-│   │   ├── hw_06.md                            # Tugas untuk Sesi 6
-│   │   ├── hw_07.md                            # Tugas untuk Sesi 7
-│   │   └── hw_08.md                            # Tugas untuk Sesi 8
-│   └── mock_exam/
-│       ├── mock_exam_01.md                     # Ujian simulasi: API .NET & Desktop Apps
-│       └── mock_exam_02.md                     # Ujian simulasi: Mobile Android Full Integration
-├── daily-plans/
-│   ├── session-01.md                           # File sesi lama (dipindahkan ke training-plan/plan/)
-│   ├── session-02.md
-│   ├── session-03.md
-│   ├── session-04.md
-│   ├── session-05.md
-│   ├── session-06.md
-│   ├── session-07.md
-│   └── session-08.md
-├── plan.md                                      # Ikhtisar rencana pelatihan
-├── README.md                                    # File ini (versi Bahasa Inggris)
-├── README-id.md                                 # File ini (versi Bahasa Indonesia)
-└── .gitignore                                   # Aturan git ignore
+├── pdf/                         # PDF kompetisi resmi
+├── txt/                         # Salinan teks yang bisa dicari
+├── Docs/                        # Dokumen analisis (Bahasa Inggris)
+├── Docs-id/                     # Dokumen analisis (Bahasa Indonesia)
+├── training-plan/               # ← KONTEN PELATIHAN UTAMA
+│   ├── agent_plan/              # Strategi & dokumen mentor
+│   │   ├── objective.md         # Tujuan pelatihan & KPI
+│   │   ├── training_strategy.md # Metodologi (20% teori, 30% demo, 40% praktik)
+│   │   ├── evaluation_criteria.md # Checkpoint & rubrik penilaian
+│   │   ├── mentor_notes.md      # Tips & catatan mentor per sesi
+│   │   └── mentor_cheatsheet.md # Referensi cepat: commands, template, checklist
+│   ├── plan/                    # Rencana detail per sesi
+│   │   ├── session_01.md        # Sesi 1: API Kickoff + Clean Architecture
+│   │   ├── session_02.md        # Sesi 2: Application + Infrastructure Layer
+│   │   ├── session_03.md        # Sesi 3: Controllers + Business Logic
+│   │   ├── session_04.md        # Sesi 4: WinForm + Android Integration
+│   │   └── session_05.md        # Sesi 5: Full Integration + Simulasi Kompetisi
+│   ├── assignments/             # Homework per sesi
+│   │   └── hw_01.md → hw_05.md  # Tugas setelah setiap sesi
+│   ├── mock_exam/               # Ujian latihan (simulasi kompetisi)
+│   │   ├── mock_exam_01.md      # Simulasi: API + Desktop Apps (3 jam)
+│   │   └── mock_exam_02.md      # Simulasi: Mobile Android Full Integration (3 jam)
+│   └── dotnet-api-example/      # Panduan implementasi API step-by-step
+│       ├── 01-BookstoreApi-GUIDE.md  # Level 1: Clean Architecture Dasar
+│       ├── 02-LibraryApi-GUIDE.md   # Level 2: Role-based auth + business rules
+│       └── 03-HotelApi-GUIDE.md     # Level 3: State machine + laporan
+├── README.md                    # File ini (Bahasa Inggris)
+└── README-id.md                 # Versi Bahasa Indonesia
 ```
 
 ## Deskripsi Dokumen
@@ -236,34 +209,71 @@ Dokumen ini mengembangkan kisi-kisi dengan detail implementasi:
 - **Hari 2**: Modul C & D (total 6 jam)
 - **Hari 3**: Penutupan dan evaluasi (1 jam)
 
-## Cara Menggunakan Repository Ini
+## 🎓 Pusat Pelatihan (Training Hub)
 
-### Contoh Implementasi API Praktis
-*   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (BookstoreApi - Level 1)](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md)**: Panduan lengkap dan ramah pemula untuk membangun Clean Architecture ASP.NET Core API dengan SQLite/SQL Server, autentikasi JWT, dan pola repository dari nol.
-*   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (LibraryApi - Level 2)](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md)**: Panduan tingkat menengah yang mendemonstrasikan autentikasi berbasis peran (Admin/Librarian), pembaruan inventori transaksional, kalkulasi denda otomatis, dan query repository tingkat lanjut.
-*   🚀 **[Panduan Langkah-Demi-Langkah Pembuatan API (HotelApi - Level 3)](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md)**: Panduan tingkat lanjut yang mendemonstrasikan state machine reservasi penuh, query ketersediaan berbasis rentang tanggal, 6 entitas, transisi status dengan PATCH, dan laporan revenue/occupancy khusus Admin.
+> Semua materi pelatihan ada di folder [`training-plan/`](./training-plan/).
+> Mulai dari panduan API di bawah, lalu ikuti rencana sesi dan homework secara berurutan.
+
+---
+
+### 📚 Panduan API Step-by-Step (Mulai di Sini)
+
+Tiga proyek dengan kompleksitas bertingkat — masing-masing adalah contoh Clean Architecture yang lengkap dan bisa dijalankan:
+
+| Level | Panduan | Kompleksitas | Fitur Utama |
+|-------|---------|--------------|-------------|
+| Level 1 | [Panduan BookstoreApi](./training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md) | ⭐ Dasar | CRUD, JWT Auth, Repository Pattern |
+| Level 2 | [Panduan LibraryApi](./training-plan/dotnet-api-example/02-LibraryApi-GUIDE.md) | ⭐⭐ Menengah | Role-based Auth, Kalkulasi Denda, Manajemen Stok |
+| Level 3 | [Panduan HotelApi](./training-plan/dotnet-api-example/03-HotelApi-GUIDE.md) | ⭐⭐⭐ Lanjut | State Machine, Ketersediaan Tanggal, Laporan Revenue |
+
+---
+
+### 🗓️ Sesi Pelatihan (5 Sesi × 2 Jam)
+
+| Sesi | Topik | Rencana Sesi | Homework |
+|------|-------|--------------|----------|
+| Sesi 1 (10 Jul) | API Kickoff + Fondasi Clean Architecture | [session_01.md](./training-plan/plan/session_01.md) | [hw_01.md](./training-plan/assignments/hw_01.md) |
+| Sesi 2 (11 Jul) | Application + Infrastructure Layer | [session_02.md](./training-plan/plan/session_02.md) | [hw_02.md](./training-plan/assignments/hw_02.md) |
+| Sesi 3 (12 Jul) | Controllers + Business Logic + Error Handling | [session_03.md](./training-plan/plan/session_03.md) | [hw_03.md](./training-plan/assignments/hw_03.md) |
+| Sesi 4 (13 Jul) | Integrasi WinForm + Android Kotlin | [session_04.md](./training-plan/plan/session_04.md) | [hw_04.md](./training-plan/assignments/hw_04.md) |
+| Sesi 5 (14 Jul) | Full Integration + Simulasi Kompetisi | [session_05.md](./training-plan/plan/session_05.md) | [hw_05.md](./training-plan/assignments/hw_05.md) |
+
+---
+
+### 🏁 Ujian Latihan (Simulasi Kompetisi)
+
+| Ujian Latihan | Fokus | Durasi |
+|---------------|-------|--------|
+| [Mock Exam 01](./training-plan/mock_exam/mock_exam_01.md) | API (Clean Architecture) + Desktop WinForm | 3 jam |
+| [Mock Exam 02](./training-plan/mock_exam/mock_exam_02.md) | Mobile Android Full Integration | 3 jam |
+
+---
+
+### 🧑‍🏫 Sumber Daya Mentor
+
+| Dokumen | Kegunaan |
+|---------|----------|
+| [mentor_cheatsheet.md](./training-plan/agent_plan/mentor_cheatsheet.md) | 🔑 Referensi satu halaman: semua command CLI, template kode, checklist kompetisi |
+| [mentor_notes.md](./training-plan/agent_plan/mentor_notes.md) | Tips persiapan per sesi, pitfall umum, troubleshooting |
+| [training_strategy.md](./training-plan/agent_plan/training_strategy.md) | Metodologi pelatihan & strategi adaptasi |
+| [evaluation_criteria.md](./training-plan/agent_plan/evaluation_criteria.md) | Checkpoint, rubrik penilaian, kriteria kelulusan |
+| [objective.md](./training-plan/agent_plan/objective.md) | Tujuan pelatihan, KPI, kriteria keberhasilan |
+
+---
 
 ### Untuk Peserta
 1. **Mulai dengan `pdf/lks-it software solution for bussiness-deskripsi-teknis.pdf`** untuk melihat struktur kompetisi resmi asli
 2. **Tinjau `pdf/lks-it software solution for bussiness-kisi-kisi.pdf`** untuk melihat persyaratan kompetisi resmi asli
-3. **Referensi `txt/deskripsi-teknis.txt`** untuk salinan teks yang dapat dicari dari deskripsi teknis
-4. **Referensi `txt/kisi-kisi.txt`** untuk salinan teks yang dapat dicari dari persyaratan kompetisi
-5. **Pelajari `Docs/detailed-breakdown.md`** untuk analisis komprehensif dan panduan persiapan
-6. **Referensi `Docs/competition-requirements-specification.md`** untuk contoh implementasi detail
+3. **Pelajari `Docs/detailed-breakdown.md`** untuk analisis komprehensif dan panduan persiapan
+4. **Ikuti rencana sesi** secara berurutan: `session_01.md` → `session_05.md`
+5. **Selesaikan setiap homework** sebelum sesi berikutnya dimulai
+6. **Latihan dengan mock exam** setelah Sesi 5 untuk mensimulasikan kondisi kompetisi
 
 ### Untuk Mentor/Pelatih
-1. Gunakan `Docs/detailed-breakdown.md` untuk membuat kurikulum pelatihan
-2. Gunakan `Docs/competition-requirements-specification.md` untuk panduan teknis
-3. Ikuti daftar periksa persiapan untuk memastikan pelatihan komprehensif
-4. Fokus pada faktor keberhasilan utama dan kesalahan umum
-
-### Referensi Cepat
-- **Ikhtisar Kompetisi**: Lihat `Docs/detailed-breakdown.md` Bagian 1
-- **Detail Modul**: Lihat `Docs/detailed-breakdown.md` Bagian 3
-- **Persyaratan Teknis**: Lihat `Docs/detailed-breakdown.md` Bagian 6
-- **Jadwal**: Lihat `Docs/detailed-breakdown.md` Bagian 8
-- **Kriteria Penilaian**: Lihat `Docs/competition-requirements-specification.md` Bagian 6
-- **Contoh Kode**: Lihat bagian Modul di `Docs/competition-requirements-specification.md`
+1. 📋 Buka **[mentor_cheatsheet.md](./training-plan/agent_plan/mentor_cheatsheet.md)** — biarkan terbuka saat mengajar untuk copy-paste cepat
+2. 📝 Baca **[mentor_notes.md](./training-plan/agent_plan/mentor_notes.md)** sebelum setiap sesi untuk tips persiapan
+3. 📖 Tunjukkan **Panduan API** kepada siswa sebagai referensi hidup yang bisa dijalankan dan dimodifikasi
+4. ⏱️ Gunakan **Mock Exam** di Sesi 5 dengan timer nyata untuk mensimulasikan tekanan kompetisi
 
 ## Faktor Keberhasilan Utama
 
@@ -332,5 +342,6 @@ Untuk informasi kompetisi resmi, silakan hubungi penyelenggara LKS DIKMEN Nasion
 
 ---
 
-**Terakhir Diperbarui**: 2026  
+**Terakhir Diperbarui**: 9 Juli 2026
 **Kompetisi**: LKS DIKMEN Nasional 2026 - IT Software Solution for Business
+**Periode Pelatihan**: 10 – 14 Juli 2026 | **Hari Kompetisi**: 27 Juli 2026 (paling awal)
