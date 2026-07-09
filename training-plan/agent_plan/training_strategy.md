@@ -113,9 +113,9 @@
 - **Jika siswa kesulitan di area tertentu**: Berikan extra practice dan review
 
 ### Berdasarkan Feedback
-- **Setelah setiap sesi**: Tanyakan feedback siswa
-- **Setelah checkpoint (sesi 2, 5, 8)**: Evaluasi progres dan adjust plan
-- **Setelah meeting dengan siswa (6 Juli)**: Update plan sesuai kebutuhan aktual
+- **Setelah setiap sesi**: Tanyakan feedback siswa dan catat dalam mentor notes
+- **Checkpoint utama (sesi 2 & sesi 4)**: Evaluasi progres menyeluruh dan adjust plan jika perlu
+- **Antara sesi 5 dan kompetisi (14–27 Juli)**: Siswa berlatih mandiri, mentor tersedia untuk pertanyaan
 
 ## Error Handling Strategy
 

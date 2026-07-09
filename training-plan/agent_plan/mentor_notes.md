@@ -29,8 +29,10 @@
 
 **Preparation:**
 - Siapkan contoh solution Clean Architecture yang sudah jadi sebagai referensi
+  - 📖 Gunakan **`training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md`** sebagai referensi utama (Langkah 1-4)
 - Siapkan perintah `dotnet CLI` untuk dibuat skeleton project
 - Tentukan domain bisnis bersama siswa di awal sesi (misal: Inventory, Sales, Library)
+- Minta siswa membuka `dotnet-api-example/01-BookstoreApi/` sebagai contoh nyata yang bisa dijalankan
 
 **Tips:**
 - Assessment hanya 20 menit — siswa sudah capable, jangan habiskan waktu di review
@@ -55,8 +57,10 @@
 **Preparation:**
 - Review entity yang dibuat siswa dari homework
 - Siapkan contoh DTO lengkap (Dto, CreateRequest, UpdateRequest)
-- Siapkan contoh Repository<T> yang sudah jadi
-- Siapkan contoh AppDbContext dengan relasi
+  - 📖 Referensi: `training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md` Langkah 5 (Application Layer)
+- Siapkan contoh Repository per entity yang sudah jadi (bukan Generic Repository)
+- Siapkan contoh AppDbContext dengan relasi dan seed data
+  - 📖 Referensi: `training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md` Langkah 6 (Infrastructure Layer)
 
 **Tips:**
 - Tekankan: "DTO ≠ Entity" — entity untuk DB, DTO untuk API response
@@ -81,8 +85,10 @@
 
 **Preparation:**
 - Siapkan contoh Controller lengkap dengan ApiResponse
-- Siapkan contoh ExceptionHandlingMiddleware yang sudah jadi
+  - 📖 Referensi: `training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md` Langkah 7 (API Layer)
+- Siapkan contoh GlobalExceptionHandler (menggunakan `IExceptionHandler` di .NET 8, bukan Middleware manual)
 - Siapkan contoh business rule (validasi duplikat, stok tidak cukup, kalkulasi)
+  - 📖 Contoh advanced: `training-plan/dotnet-api-example/03-HotelApi-GUIDE.md` Langkah 5 (ReservationService state machine)
 
 **Tips:**
 - Demo live: "throw exception di service → lihat middleware tangkap → lihat format response"
@@ -158,13 +164,14 @@
 ## Catatan Umum Pelatihan
 
 ### Software yang Diperlukan
-- Visual Studio 2022/2026 Community Edition (workload: ASP.NET + .NET Desktop)
-- .NET 8 SDK
-- SQL Server 2022
-- SQL Server Management Studio (SSMS)
-- Postman
-- Android Studio (dengan emulator AVD yang sudah terkonfigurasi)
-- Android SDK API Level 34
+- **Visual Studio 2022** Community Edition (workload: **ASP.NET and web development** + **.NET desktop development**)
+- **.NET 8 SDK** (`dotnet --version` harus menampilkan `8.x.x`)
+- **SQL Server 2022** (LocalDB sudah cukup untuk latihan) — atau **SQLite** sebagai alternatif yang lebih ringan
+  - Project contoh di folder `dotnet-api-example/` menggunakan SQLite secara default (switchable ke SQL Server)
+- **SQL Server Management Studio (SSMS)** — opsional jika memakai SQLite
+- **Postman** atau gunakan Swagger UI yang sudah built-in
+- **Android Studio** (Meerkat / terbaru) dengan emulator AVD yang sudah terkonfigurasi
+- **Android SDK API Level 34** (sesuai requirement kompetisi)
 
 ### Clean Architecture Reference
 ```
@@ -212,5 +219,15 @@ Solution: BusinessApp
 
 ---
 
-**Versi Dokumen**: 2.0 (Direvisi 8 Juli 2026)
+**Versi Dokumen**: 2.1 (Direvisi 9 Juli 2026)
 **Kompetisi**: LKS DIKMEN Nasional 2026 - IT Software Solution for Business
+
+---
+
+## Dokumen Terkait
+| Dokumen | Lokasi | Kegunaan |
+|---------|--------|----------|
+| Quick Reference / Cheat Sheet | `agent_plan/mentor_cheatsheet.md` | Referensi cepat commands & template |
+| Session Plans | `plan/session_01.md` hingga `session_05.md` | Rencana detail per sesi |
+| Homework | `assignments/hw_01.md` hingga `hw_05.md` | Tugas siswa |
+| API Guides | `dotnet-api-example/0X-*-GUIDE.md` | Step-by-step contoh proyek |

@@ -3,8 +3,8 @@
 ## Informasi
 - **Fokus**: Mobile Android dengan API Integration
 - **Durasi**: 3 jam (simulasi kompetisi)
-- **Waktu**: Setelah Sesi 8
-- **Tujuan**: Simulasi Modul A & C (Mobile Android) dengan API integration
+- **Waktu**: Setelah Sesi 5 (Persiapan Mandiri / Latihan Tambahan Mandiri)
+- **Tujuan**: Simulasi Modul A & C (Mobile Android) dengan API integration berbasis Clean Architecture
 
 ## Scenario
 
@@ -36,7 +36,8 @@ Anda diminta untuk membuat aplikasi mobile Android untuk **Order Management Syst
 ## Requirements
 
 ### API Setup (30 menit)
-- Gunakan API yang sudah dibuat atau buat API baru
+- Gunakan API Clean Architecture yang sudah dibuat di sesi 1-3 (atau buat baru dari awal)
+- Referensi: `training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md`
 - Pastikan semua endpoints berfungsi:
   - GET /api/customers
   - POST /api/customers
@@ -162,7 +163,8 @@ Anda diminta untuk membuat aplikasi mobile Android untuk **Order Management Syst
 
 ## Notes
 
-- Gunakan API yang sudah dibuat di sesi 1-2
+- Gunakan API Clean Architecture yang sudah dibuat di sesi 1-3
+- Pastikan API sudah running sebelum mulai Android development
 - Fokus pada Compose untuk UI
 - Gunakan coroutines untuk async operations
 - Implementasi proper error handling

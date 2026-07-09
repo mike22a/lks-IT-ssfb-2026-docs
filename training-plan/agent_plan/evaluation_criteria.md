@@ -41,44 +41,40 @@
 
 ## Checkpoint Evaluation
 
-### Checkpoint 1 (Setelah Sesi 2) - API Readiness
+### Checkpoint 1 (Setelah Sesi 2) — API Readiness
 **Kriteria:**
-- [ ] API berjalan dan dapat diakses
-- [ ] Semua CRUD endpoints berfungsi
-- [ ] Error handling proper
-- [ ] API documentation lengkap
-- [ ] Business logic benar
+- [ ] Clean Architecture solution terbuat (`dotnet build` 0 error)
+- [ ] AppDbContext + migration berhasil (tabel terbuat)
+- [ ] CRUD endpoints berjalan di Swagger
+- [ ] `ApiResponse<T>` konsisten
+- [ ] Business logic di service layer (bukan controller)
 
 **Pass/Fail:**
-- **Pass**: Lanjut ke sesi 3
-- **Fail**: Review dan remedial sebelum sesi 3
+- **Pass**: Lanjut ke Sesi 3 dengan percaya diri
+- **Fail**: Review bersama mentor, target selesai sebelum Sesi 3 dimulai
 
-### Checkpoint 2 (Setelah Sesi 5) - Desktop Readiness
+### Checkpoint 2 (Setelah Sesi 4) — Integration Readiness
 **Kriteria:**
-- [ ] Desktop apps berjalan
-- [ ] CRUD operations berfungsi
-- [ ] Integration dengan API berhasil
-- [ ] Advanced queries berfungsi
-- [ ] Data visualization berfungsi
-- [ ] Validation proper
+- [ ] WinForm CRUD via API berjalan (tidak ada UI freeze)
+- [ ] Android GET dari API berjalan (LazyColumn tampil data)
+- [ ] API, WinForm, Android bisa berjalan bersamaan
+- [ ] End-to-end flow terbukti: tambah dari WinForm → tampil di Android
 
 **Pass/Fail:**
-- **Pass**: Lanjut ke sesi 6
-- **Fail**: Review dan remedial sebelum sesi 6
+- **Pass**: Lanjut ke Sesi 5 (simulasi kompetisi)
+- **Fail**: Extra practice hari H+1, prioritaskan bug yang memblokir integrasi
 
-### Checkpoint 3 (Setelah Sesi 8) - Final Readiness
+### Checkpoint Final (Setelah Sesi 5) — Competition Readiness
 **Kriteria:**
-- [ ] Mobile apps berjalan
-- [ ] CRUD di mobile berfungsi
-- [ ] API integration di mobile berhasil
-- [ ] Search dan filter berfungsi
-- [ ] Data export berfungsi
-- [ ] Semua modul terintegrasi
-- [ ] Time management teruji
+- [ ] Bisa membuat ulang Clean Architecture API dari awal dalam < 30 menit
+- [ ] Bisa buat WinForm CRUD via API dalam < 45 menit
+- [ ] Bisa buat Android list dari API dalam < 30 menit
+- [ ] Semua common pitfall sudah pernah dihadapi dan diselesaikan
+- [ ] Checklist kompetisi sudah diverifikasi di komputer yang akan dipakai
 
 **Pass/Fail:**
-- **Pass**: Siap untuk kompetisi
-- **Fail**: Extra practice sebelum kompetisi
+- **Pass**: Siap untuk kompetisi (27 Juli 2026)
+- **Fail**: Fokus latihan mandiri + hubungi mentor untuk sesi Q&A tambahan
 
 ## Kriteria Penilaian Kompetisi (Resmi)
 
@@ -179,6 +175,5 @@
 
 ---
 
-**Versi Dokumen**: 1.0  
-**Tanggal**: 2026  
+**Versi Dokumen**: 1.1 (Direvisi 9 Juli 2026)
 **Kompetisi**: LKS DIKMEN Nasional 2026 - IT Software Solution for Business

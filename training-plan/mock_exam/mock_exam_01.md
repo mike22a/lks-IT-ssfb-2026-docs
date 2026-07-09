@@ -33,12 +33,16 @@ Anda diminta untuk membuat aplikasi desktop untuk manajemen **Inventory System**
 
 ## Requirements
 
-### API .NET (1 jam)
+### API .NET — Clean Architecture (1 jam)
+
+> ⚠️ **Wajib menggunakan Clean Architecture 4-layer**: Domain, Application, Infrastructure, API.
+> Referensi: `training-plan/dotnet-api-example/01-BookstoreApi-GUIDE.md`
 
 #### 1. Database Setup (15 menit)
-- Create database dengan 3 entities di atas
-- Insert sample data (minimal 5 rekaman per table)
-- Setup Entity Framework
+- Create solution Clean Architecture (`dotnet new sln`, 4 projects, referensi antar project)
+- Buat entities di Domain layer, AppDbContext di Infrastructure layer
+- Migration & database dengan sample data (minimal 5 rekaman per tabel)
+- Seed data menggunakan `HasData()` dengan nilai **statis** (bukan `DateTime.UtcNow`)
 
 #### 2. API Endpoints (45 menit)
 Buat RESTful API dengan endpoints berikut:
@@ -60,13 +64,14 @@ Buat RESTful API dengan endpoints berikut:
 - GET /api/transactions/report - Get transaction report (aggregate)
 
 #### 3. Requirements Tambahan
-- Implementasi proper error handling
-- Return appropriate status codes
-- Implementasi business logic:
-  - StockQuantity tidak boleh negatif
-  - TransactionType harus "IN" atau "OUT"
-  - Jika TransactionType "OUT", kurangi StockQuantity
-  - Jika TransactionType "IN", tambahkan StockQuantity
+- `ApiResponse<T>` wrapper konsisten di **semua endpoint**
+- `GlobalExceptionHandler` aktif (NotFoundException → 404, BusinessRuleException → 422)
+- Business logic di **Service layer** (bukan di Controller)
+- Business rules:
+  - StockQuantity tidak boleh negatif (throw `BusinessRuleException` jika `Type=OUT` dan stok tidak cukup)
+  - TransactionType harus "IN" atau "OUT" (throw `BusinessRuleException` jika tidak valid)
+  - Jika `Type="OUT"`: kurangi StockQuantity dari Product
+  - Jika `Type="IN"`: tambahkan StockQuantity ke Product
 
 ### Desktop Apps (2 jam)
 
@@ -115,12 +120,13 @@ Buat RESTful API dengan endpoints berikut:
 
 ## Evaluation Criteria
 
-### API .NET (33%)
-- [ ] Database setup dengan proper schema
-- [ ] Semua endpoints berfungsi
-- [ ] Error handling proper
-- [ ] Business logic benar
-- [ ] Response format consistent
+### API .NET — Clean Architecture (33%)
+- [ ] Solution 4-layer terbuat dan `dotnet build` 0 error
+- [ ] Semua endpoint CRUD berjalan (test via Swagger)
+- [ ] `ApiResponse<T>` konsisten di semua response
+- [ ] `GlobalExceptionHandler` aktif (404/409/422/500)
+- [ ] Business rules benar (stok update, validasi TransactionType)
+- [ ] Seed data tersedia (minimal 5 rekaman per tabel)
 
 ### Desktop Apps (67%)
 - [ ] Main form dengan menu berfungsi
