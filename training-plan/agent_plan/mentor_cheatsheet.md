@@ -319,3 +319,173 @@ private async void btnRefresh_Click(object sender, EventArgs e)
 ---
 
 *Referensi project contoh: `dotnet-api-example/` — BookstoreApi (Level 1), LibraryApi (Level 2), HotelApi (Level 3)*
+
+---
+
+## 13. Report API — Install Packages
+
+```bash
+# Di Infrastructure project
+dotnet add src/BusinessApp.Infrastructure package QuestPDF --version 2024.12.0
+dotnet add src/BusinessApp.Infrastructure package ClosedXML --version 0.102.3
+```
+
+```csharp
+// Program.cs — WAJIB, taruh sebelum builder.Build()
+QuestPDF.Settings.License = LicenseType.Community;
+```
+
+---
+
+## 14. Template: PDF Export (QuestPDF Minimal)
+
+```csharp
+public byte[] GeneratePdf(List<MySummaryDto> data)
+{
+    var doc = Document.Create(container =>
+    {
+        container.Page(page =>
+        {
+            page.Size(PageSizes.A4);
+            page.Margin(2, Unit.Centimetre);
+
+            page.Header()
+                .Text("Laporan Ringkasan")
+                .SemiBold().FontSize(16).FontColor(Colors.Blue.Medium);
+
+            page.Content().PaddingVertical(10).Table(table =>
+            {
+                table.ColumnsDefinition(col =>
+                {
+                    col.RelativeColumn(3); // kolom 1 lebih lebar
+                    col.RelativeColumn(2);
+                    col.RelativeColumn(2);
+                });
+
+                // Header tabel
+                table.Header(header =>
+                {
+                    foreach (var h in new[] { "Nama", "Jumlah", "Total" })
+                        header.Cell()
+                            .Background(Colors.Blue.Medium)
+                            .Padding(5)
+                            .Text(h).FontColor(Colors.White).SemiBold();
+                });
+
+                // Data rows
+                foreach (var row in data)
+                {
+                    table.Cell().Padding(4).Text(row.Name);
+                    table.Cell().Padding(4).Text(row.Count.ToString());
+                    table.Cell().Padding(4).Text(row.Total.ToString("N0"));
+                }
+            });
+
+            page.Footer().AlignCenter().Text(x =>
+            {
+                x.Span($"Generated: {DateTime.Now:yyyy-MM-dd HH:mm}   Page ");
+                x.CurrentPageNumber();
+                x.Span(" of ");
+                x.TotalPages();
+            });
+        });
+    });
+
+    return doc.GeneratePdf();
+}
+```
+
+---
+
+## 15. Template: Excel Export (ClosedXML Minimal)
+
+```csharp
+public byte[] GenerateExcel(List<MySummaryDto> data)
+{
+    using var workbook = new XLWorkbook();
+    var sheet = workbook.Worksheets.Add("Report");
+
+    // Header styling
+    var headers = new[] { "Nama", "Jumlah", "Total" };
+    for (int i = 0; i < headers.Length; i++)
+    {
+        var cell = sheet.Cell(1, i + 1);
+        cell.Value = headers[i];
+        cell.Style.Font.Bold = true;
+        cell.Style.Fill.BackgroundColor = XLColor.FromHtml("#2563EB");
+        cell.Style.Font.FontColor = XLColor.White;
+    }
+
+    // Data rows
+    for (int i = 0; i < data.Count; i++)
+    {
+        int row = i + 2;
+        sheet.Cell(row, 1).Value = data[i].Name;
+        sheet.Cell(row, 2).Value = data[i].Count;
+        sheet.Cell(row, 3).Value = data[i].Total;
+        sheet.Cell(row, 3).Style.NumberFormat.Format = "#,##0";
+        if (i % 2 == 0)
+            sheet.Row(row).Style.Fill.BackgroundColor = XLColor.FromHtml("#F1F5F9");
+    }
+
+    sheet.Columns().AdjustToContents();
+
+    using var stream = new MemoryStream();
+    workbook.SaveAs(stream);
+    return stream.ToArray();
+}
+```
+
+---
+
+## 16. Template: Report Controller Endpoints
+
+```csharp
+// GET JSON
+[HttpGet("summary")]
+public async Task<ActionResult<ApiResponse<IEnumerable<MySummaryDto>>>> GetSummary()
+    => Ok(ApiResponse<IEnumerable<MySummaryDto>>.SuccessResult(await _reportService.GetSummaryAsync()));
+
+// GET PDF
+[HttpGet("summary/pdf")]
+public async Task<IActionResult> DownloadPdf()
+{
+    var bytes = await _exportService.ExportToPdfAsync();
+    return File(bytes, "application/pdf", $"report-{DateTime.Now:yyyyMMdd}.pdf");
+}
+
+// GET Excel
+[HttpGet("summary/excel")]
+public async Task<IActionResult> DownloadExcel()
+{
+    var bytes = await _exportService.ExportToExcelAsync();
+    return File(bytes,
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        $"report-{DateTime.Now:yyyyMMdd}.xlsx");
+}
+```
+
+---
+
+## 17. WinForm — Download & Buka File dari API
+
+```csharp
+// Buka PDF langsung (pakai PDF viewer default sistem)
+var bytes = await _httpClient.GetByteArrayAsync("api/reports/summary/pdf");
+var tmp = Path.Combine(Path.GetTempPath(), "report.pdf");
+await File.WriteAllBytesAsync(tmp, bytes);
+Process.Start(new ProcessStartInfo { FileName = tmp, UseShellExecute = true });
+
+// Simpan Excel dengan dialog
+using var dlg = new SaveFileDialog { Filter = "Excel|*.xlsx", FileName = "report.xlsx" };
+if (dlg.ShowDialog() == DialogResult.OK)
+{
+    var bytes = await _httpClient.GetByteArrayAsync("api/reports/summary/excel");
+    await File.WriteAllBytesAsync(dlg.FileName, bytes);
+    MessageBox.Show("Tersimpan!", "OK");
+}
+```
+
+---
+
+*Referensi modul lengkap: `training-plan/plan/module_report_api.md`*
