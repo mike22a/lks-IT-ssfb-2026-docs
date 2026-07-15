@@ -1,188 +1,91 @@
-# Project Constitution
+# Digital Library Training Project
 
-## Digital Library Training Kit
+## AI Project Constitution
 
----
-
-## Purpose
-
-Menetapkan aturan utama dan filosofi project Digital Library untuk memastikan konsistensi dan kualitas.
+Version: 1.1
 
 ---
 
-## Scope
+# Purpose
 
-Dokumen ini mencakup:
-
-- Filosofi project
-- Filosofi coding
-- Filosofi dokumentasi
-- Filosofi pembelajaran
+Dokumen ini mendefinisikan aturan dan panduan utama bagi AI Agent dalam membangun serta memelihara proyek Digital Library sebagai media pembelajaran mandiri bagi siswa SMK untuk persiapan LKS Software Solution for Business (SSFB).
 
 ---
 
-## Learning Objectives
+# Scope
 
-Setelah membaca dokumen ini, siswa dan mentor dapat:
-
-- Memahami filosofi project
-- Mengikuti aturan coding yang ditetapkan
-- Memahami pentingnya dokumentasi
-- Memahami pendekatan pembelajaran
-
----
-
-## Prerequisites
-
-- Tidak ada prerequisite khusus
+Proyek ini mencakup:
+* ASP.NET Core 8 Web API
+* SQL Server 2022
+* WinForms Desktop Application (.NET 8)
+* Android Application (Kotlin + Retrofit 2)
+* Clean Architecture Standard
+* Panduan belajar mandiri (Onboarding, Quick Start, dan Validasi Mandiri)
 
 ---
 
-## Business Rules
+# Learning Objectives
 
-- Semua aturan dalam constitution ini harus diikuti
-- Deviasi dari aturan harus disetujui oleh mentor
-
----
-
-## Design / Main Content
-
-### Filosofi Project
-
-**Documentation First**
-- Dokumentasi adalah sumber kebenaran tunggal
-- Implementasi mengikuti dokumentasi
-- Jangan implement tanpa dokumentasi
-
-**Incremental Development**
-- Bangun fitur satu per satu
-- Setiap fitur harus selesai sebelum lanjut
-- Test setiap fitur sebelum lanjut
-
-**No Over-engineering**
-- Gunakan solusi sederhana yang cukup
-- Jangan tambahkan kompleksitas yang tidak diperlukan
-- KISS (Keep It Simple, Stupid)
-
-**Learning > Perfection**
-- Fokus ke pemahaman, bukan code perfect
-- Code bisa di-refactor nanti
-- Understanding lebih penting daripada syntax
-
-### Filosofi Coding
-
-**Code Quality**
-- Code harus clean dan readable
-- Code harus konsisten
-- Code harus mudah dimaintain
-- Code harus mudah di-test
-
-**Naming Convention**
-- Gunakan nama yang jelas dan deskriptif
-- Hindari abbreviation yang tidak umum
-- Follow convention bahasa (PascalCase untuk C#, camelCase untuk JSON)
-
-**Code Organization**
-- Separation of concerns
-- Single responsibility
-- DRY (Don't Repeat Yourself)
-- YAGNI (You Aren't Gonna Need It)
-
-**Error Handling**
-- Handle error dengan graceful
-- Error message harus jelas
-- Log error untuk debugging
-- Jangan swallow error
-
-### Filosofi Dokumentasi
-
-**Clarity**
-- Dokumentasi harus jelas dan mudah dipahami
-- Gunakan bahasa yang sederhana
-- Hindari jargon yang tidak perlu
-
-**Completeness**
-- Dokumentasi harus lengkap
-- Jangan skip section yang penting
-- Tambahkan contoh yang relevan
-
-**Consistency**
-- Dokumentasi harus konsisten satu sama lain
-- Gunakan template yang sama
-- Cross-reference antar dokumen
-
-**Maintainability**
-- Dokumentasi harus mudah di-update
-- Update dokumentasi saat ada perubahan
-- Version control untuk dokumentasi
-
-### Filosofi Pembelajaran
-
-**Active Learning**
-- Siswa harus aktif mengetik code
-- Jangan hanya copy-paste
-- Tanya jika tidak paham
-
-**Mistake-Friendly**
-- Mistake adalah bagian dari learning
-- Jangan takut membuat mistake
-- Belajar dari mistake
-
-**Collaborative**
-- Diskusi dengan mentor dan teman
-- Share knowledge
-- Help each other
-
-**Continuous Improvement**
-- Selalu cari cara untuk improve
-- Refine skill secara terus-menerus
-- Stay curious
+Melalui proyek ini, siswa mandiri diharapkan mampu:
+* Memahami alur kerja database relasional secara utuh
+* Menerapkan Clean Architecture secara incremental (lapisan demi lapisan)
+* Mengimplementasikan REST API yang terstandarisasi dengan penanganan error terpadu
+* Membuat aplikasi GUI desktop asynchronous (WinForms)
+* Mengonsumsi REST API pada aplikasi Android dengan arsitektur MVVM
+* Melakukan debugging dan pengujian API menggunakan Postman secara mandiri
 
 ---
 
-## Implementation Notes
+# Prerequisites
 
-- Review constitution secara berkala
-- Update jika ada perubahan kebutuhan
-- Diskusikan dengan mentor jika ada pertanyaan
-
----
-
-## Common Mistakes
-
-- Skip dokumentasi dan langsung coding
-- Over-engineer solusi sederhana
-- Copy-paste tanpa memahami
-- Takut bertanya
+* Pengetahuan dasar pemrograman C# dan OOP (Object-Oriented Programming)
+* Dasar SQL Query (SELECT, INSERT, UPDATE, DELETE, JOIN)
+* Pengetahuan dasar penggunaan Git untuk version control
 
 ---
 
-## Exercises
+# Mandatory Documentation Structure
 
-1. Jelaskan mengapa documentation first penting
-2. Identifikasi area di mana Anda mungkin over-engineer
-3. Buat checklist untuk code quality
-4. Jelaskan bagaimana Anda akan apply filosofi pembelajaran
+Setiap dokumen panduan baru yang dibuat wajib memiliki parameter penanda kesulitan dan estimasi waktu di bagian atas:
 
----
+```markdown
+> **Tingkat Kesulitan**: [Mudah / Sedang / Sulit]  
+> **Estimasi Waktu Pengerjaan**: [X Jam]
+```
 
-## Homework
-
-1. Review constitution sebelum mulai project
-2. Catat area yang perlu perhatian khusus
-3. Diskusikan constitution dengan mentor
-4. Buat personal learning philosophy
-
----
-
-## References
-
-- [Clean Code by Robert C. Martin](https://www.oreilly.com/library/view/clean-code-a/9780136083238/)
-- [The Pragmatic Programmer](https://www.oreilly.com/library/view/the-pragmatic-programmer/9780135957059/)
+Serta harus memuat struktur konten berikut:
+1. Purpose
+2. Scope
+3. Learning Objectives
+4. Prerequisites
+5. Business Rules (atau N/A)
+6. Implementation Notes (termasuk Troubleshooting Gotchas)
+7. Exercises
+8. References
 
 ---
 
-## Related Documents
+# Project Philosophy
 
-- [architecture_rules.md](./architecture_rules.md) - Aturan arsitektur
-- [implementation_plan.md](./implementation_plan.md) - Rencana implementasi
+* **Documentation First**: Dokumentasi adalah spesifikasi kebenaran tunggal sebelum baris kode ditulis.
+* **Self-Validating Development**: Menyediakan skema uji mandiri (Postman schema atau skenario test) pada setiap modul agar siswa mandiri tahu jika implementasi mereka benar tanpa menunggu feedback mentor.
+* **No Over-Engineering**: Hindari penggunaan library pihak ketiga atau pola kode yang terlalu rumit jika solusi bawaan .NET/Kotlin sudah memadai.
+* **Fail-Safe & User-Friendly**: Desain sistem harus ramah terhadap kesalahan jaringan dan input pengguna yang tidak valid.
+
+---
+
+# Important Rules for AI Agents
+
+AI Agent yang bertugas melakukan update proyek WAJIB:
+* Menjelaskan MENGAPA (konsep/tujuan) sebelum BAGAIMANA (potongan kode).
+* Memecah masalah kompleks menjadi langkah-langkah kecil (task incremental).
+* Menyediakan snippet kode yang fungsional, bersih, dan mudah dipahami siswa SMK.
+* Menyertakan skenario pengujian mandiri dan tips troubleshooting untuk setiap fitur yang diinstruksikan.
+
+AI Agent dilarang keras:
+* Melompati tahapan arsitektur (misal: langsung menghubungkan DB ke Controller demi kecepatan).
+* Menyembunyikan stack trace error mentah atau membiarkan aplikasi crash tanpa penjelasan visual di client.
+
+---
+
+# End of Document

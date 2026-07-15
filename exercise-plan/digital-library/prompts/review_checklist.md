@@ -1,201 +1,83 @@
-# Review Checklist
+# Quality Control & Review Checklist
 
-## Digital Library Training Kit
-
----
-
-## Purpose
-
-Menyediakan checklist untuk review kualitas implementasi sebelum dianggap selesai.
+## Digital Library Project
 
 ---
 
-## Scope
+# Purpose
 
-Dokumen ini mencakup:
-
-- Definition of Done
-- Review checklist
-- Quality checklist
-- Testing checklist
-- Documentation checklist
+Menyediakan panduan audit mandiri (self-review) yang konkret bagi siswa untuk memastikan bahwa kode mereka bebas dari bug umum dan memenuhi spesifikasi kompetensi LKS SSFB sebelum beralih ke task berikutnya.
 
 ---
 
-## Learning Objectives
+# Scope
 
-Setelah menggunakan checklist ini, siswa dapat:
-
-- Memahami kriteria "done"
-- Review code dengan sistematis
-- Memastikan kualitas code
-- Memastikan testing adequate
-- Memastikan dokumentasi lengkap
+Checklist ini berlaku untuk:
+* Schema & Constraints Database SQL Server
+* REST API dan Layer Abstraksi Clean Architecture
+* Validasi Input dan Pola Async pada WinForms UI
+* Penggunaan Retrofit dan RecyclerView di Android Client
 
 ---
 
-## Prerequisites
+# Learning Objectives
 
-- Implementasi sudah selesai
-- Sudah membaca semua dokumentasi
-
----
-
-## Business Rules
-
-- Semua item dalam checklist harus terpenuhi sebelum dianggap selesai
-- Review harus dilakukan secara sistematis
+* Mengembangkan insting quality control (QC) mandiri
+* Memahami pentingnya edge-case testing
+* Mengurangi ketergantungan pada pengecekan manual oleh mentor
 
 ---
 
-## Design / Main Content
+# Prerequisites
 
-### Definition of Done
-
-**Sebuah fitur dianggap "done" jika:**
-- Code berfungsi sesuai requirement
-- Code mengikuti architecture rules
-- Code mengikuti coding convention
-- Code sudah di-test
-- Error handling ada
-- Dokumentasi sudah di-update
-- Code sudah di-commit dengan message yang jelas
-
-### Review Checklist
-
-**Code Review:**
-- [ ] Code clean dan readable
-- [ ] Code mengikuti naming convention
-- [ ] Code mengikuti architecture rules
-- [ ] Code tidak ada duplication
-- [ ] Code tidak ada dead code
-- [ ] Code comment untuk bagian kompleks
-
-**Architecture Review:**
-- [ ] Layer separation benar
-- [ ] Dependency rule diikuti
-- [ ] SOLID principles diterapkan
-- [ ] Repository pattern diterapkan
-- [ ] Service layer ada business logic
-
-**Functionality Review:**
-- [ ] Semua requirement terpenuhi
-- [ ] Business rules diterapkan
-- [ ] Edge cases ditangani
-- [ ] Error handling ada
-- [ ] Validation ada
-
-### Quality Checklist
-
-**Code Quality:**
-- [ ] Code consistent
-- [ ] Code maintainable
-- [ ] Code testable
-- [ ] Code performa acceptable
-- [ ] Code secure (basic security)
-
-**Error Handling:**
-- [ ] Exception handling ada
-- [ ] Error message jelas
-- [ ] Error logging ada
-- [ ] User-friendly error display
-- [ ] Graceful degradation
-
-**Performance:**
-- [ ] Query optimized
-- [ ] Tidak ada N+1 query problem
-- [ ] Async/await digunakan untuk I/O
-- [ ] Caching jika perlu (opsional)
-- [ ] Response time acceptable
-
-### Testing Checklist
-
-**Unit Testing:**
-- [ ] Service layer di-unit test
-- [ ] Repository layer di-unit test (opsional)
-- [ ] Business logic di-unit test
-- [ ] Edge cases di-test
-- [ ] Test coverage adequate
-
-**Integration Testing:**
-- [ ] API endpoint di-test
-- [ ] Database integration di-test
-- [ ] Error scenarios di-test
-- [ ] Happy path di-test
-- [ ] Performance test (opsional)
-
-**Manual Testing:**
-- [ ] Semua fitur di-test manual
-- [ ] UI di-test
-- [ ] Error scenarios di-test manual
-- [ ] Cross-browser testing (jika web)
-- [ ] Cross-device testing (jika mobile)
-
-### Documentation Checklist
-
-**Code Documentation:**
-- [ ] Complex code ada comment
-- [ ] Public API ada XML documentation
-- [ ] README ada (jika perlu)
-- [ ] Changelog ada (jika perlu)
-
-**Project Documentation:**
-- [ ] Architecture diagram ada
-- [ ] Database schema ada
-- [ ] API documentation ada (Swagger)
-- [ ] Deployment guide ada (opsional)
-
-**User Documentation:**
-- [ ] User guide ada (opsional)
-- [ ] Installation guide ada
-- [ ] Troubleshooting guide ada (opsional)
+* Memiliki file REST Client (seperti Postman) terinstall
+* Memahami cara membaca error log / debug console
 
 ---
 
-## Implementation Notes
+# 1. Database & SQL Server Checklist
 
-- Gunakan checklist secara sistematis
-- Review sebelum commit
-- Review sebelum deploy
-- Update checklist jika ada requirement baru
-
----
-
-## Common Mistakes
-
-- Tidak review code sebelum commit
-- Skip testing karena "terburu-buru"
-- Tidak update dokumentasi
-- Tidak handle edge cases
+* [ ] **Foreign Keys**: Semua foreign keys (`CategoryId` di Books, `UserId` di Borrowings, dll) didefinisikan secara eksplisit.
+* [ ] **Cascading**: Relasi antara `Borrowing` dan `BorrowingDetail` menggunakan `ON DELETE CASCADE` sehingga jika borrowing dihapus, detailnya ikut terhapus secara otomatis.
+* [ ] **Indexes**: Kolom pencarian seperti `Title` pada Books memiliki non-clustered index untuk optimalisasi performa query.
+* [ ] **Audit Fields**: Kolom `CreatedAt` dan `UpdatedAt` ada di setiap tabel dengan default value `GETDATE()`.
+* [ ] **Constraint Check**: Kolom `Stock` memiliki constraint agar tidak bisa bernilai negatif (`Stock >= 0`).
 
 ---
 
-## Exercises
+# 2. REST API & Architecture Checklist
 
-1. Gunakan checklist untuk review code Anda
-2. Identifikasi area yang perlu improvement
-3. Buat personal review checklist
-4. Practice code review dengan teman
-
----
-
-## Homework
-
-1. Review semua implementasi dengan checklist
-2. Fix issue yang ditemukan
-3. Update dokumentasi
-4. Commit dengan message yang jelas
+* [ ] **Strict Layering**: Proyek `Domain` sama sekali tidak mereferensikan library Entity Framework.
+* [ ] **No Entity Leakage**: Proyek `API` tidak mengembalikan class entity Domain (misal `Book`) ke client. Semua return object wajib berupa `BookDto` atau objek response wrapper.
+* [ ] **Error Handling**: Exception yang tidak terduga ditangkap oleh Global Exception Middleware dan mengembalikan status code `500 Internal Server Error` dengan format payload JSON yang seragam (tidak membocorkan stack trace ke user).
+* [ ] **HTTP Status Codes**:
+  - `200 OK` untuk GET/PUT yang berhasil.
+  - `201 Created` untuk POST yang berhasil.
+  - `400 Bad Request` untuk input validation error.
+  - `404 Not Found` ketika data ID tidak ada di database.
 
 ---
 
-## References
+# 3. Desktop (WinForms) Client Checklist
 
-- [Code Review Best Practices](https://github.com/lyft/coding-standards/blob/master/csharp/code-review-checklist.md)
-- [Definition of Done](https://www.mountaingoatsoftware.com/blog/definition-of-done)
+* [ ] **Non-Blocking UI**: Tombol "Fetch" atau "Save" tidak membuat window program bertuliskan "(Not Responding)" saat diproses.
+* [ ] **State Control**: Tombol dikunci (disabled) ketika proses asynchronous API sedang berjalan untuk menghindari multi-submit data.
+* [ ] **Validation UI**: Input bertipe angka (seperti Stock) divalidasi agar tidak menerima karakter huruf sebelum dikirimkan ke API.
+* [ ] **Error Popups**: Setiap kegagalan koneksi API ditangani dengan try-catch dan memunculkan `MessageBox.Show` yang ramah pengguna (bukan membiarkan aplikasi crash).
 
 ---
 
-## Related Documents
+# 4. Mobile (Android) Client Checklist
 
-- [project_constitution.md](./project_constitution.md) - Filosofi project
-- [architecture_rules.md](./architecture_rules.md) - Aturan arsitektur
+* [ ] **Network Configuration**: Atribut `cleartextTraffic` dikonfigurasi dengan benar untuk koneksi HTTP local (`10.0.2.2`).
+* [ ] **Loading Feedback**: Indikator progress (seperti `ProgressBar`) tampil secara visual saat data sedang dimuat dari Retrofit.
+* [ ] **Zero Crash on Disconnect**: Aplikasi tidak langsung crash (force close) ketika koneksi internet PC host diputus secara mendadak. Aplikasi harus menampilkan visual `Snackbar` atau `Toast` informasi error jaringan.
+* [ ] **Recycler View Performance**: Tidak ada duplikasi item list saat list buku di-scroll ke bawah dan ke atas.
+
+---
+
+# Exercises & Testing Scenario
+
+Lakukan pengujian manual skenario berikut:
+1. Matikan service database SQL Server Anda, lalu jalankan aplikasi WinForms. Apakah program menampilkan pesan error koneksi yang jelas atau langsung hang?
+2. Kirim request POST ke endpoint `/api/borrowings` dengan body user yang tidak terdaftar. Pastikan response code yang Anda terima adalah `400` atau `404`, bukan `500`.

@@ -1,222 +1,117 @@
-# Architecture Rules
+# Architecture Rules & Coding Standard
 
-## Digital Library Training Kit
-
----
-
-## Purpose
-
-Menetapkan aturan arsitektur untuk memastikan konsistensi dan kualitas implementasi Clean Architecture.
+## Digital Library Project
 
 ---
 
-## Scope
+# Purpose
 
-Dokumen ini mencakup:
-
-- Aturan arsitektur
-- Aturan dependency
-- Aturan coding
-- Convention penamaan
-- Convention folder
+Menentukan aturan arsitektur, standar coding, dan pola interaksi antar layer agar project tetap konsisten, clean, dan mudah dipelihara (maintainable) terutama untuk siswa yang belajar mandiri.
 
 ---
 
-## Learning Objectives
+# Scope
 
-Setelah membaca dokumen ini, siswa dapat:
-
-- Memahami aturan arsitektur Clean Architecture
-- Mengikuti dependency rule dengan benar
-- Mengikuti aturan coding yang ditetapkan
-- Menggunakan convention penamaan yang benar
-- Mengorganisir folder dengan benar
-
----
-
-## Prerequisites
-
-- Sudah membaca [project_constitution.md](./project_constitution.md)
-- Memahami konsep Clean Architecture dasar
+Dokumen ini mendefinisikan batasan teknis untuk:
+* **DigitalLibrary.Domain** (Core business entities)
+* **DigitalLibrary.Application** (Use cases, interfaces, DTOs, services)
+* **DigitalLibrary.Infrastructure** (EF Core, SQL Server repositories)
+* **DigitalLibrary.API** (Controllers, program startup)
+* **DigitalLibrary.WinForms & Android** (Clients)
 
 ---
 
-## Business Rules
+# Learning Objectives
 
-- Semua aturan arsitektur harus diikuti
-- Deviasi harus disetujui oleh mentor
+* Memahami arah dependensi (Inward Dependency Rule)
+* Memahami prinsip Separation of Concerns (SoC)
+* Menghindari kopling ketat (Tight Coupling) antara UI/API dengan database
+* Menguasai cara pemetaan data menggunakan DTO
 
 ---
 
-## Design / Main Content
+# Prerequisites
 
-### Aturan Arsitektur
+* Memahami dasar Object-Oriented Programming (OOP)
+* Memahami perbedaan antara Interface dan Implementasi Class
 
-**Layer Separation**
-- Domain, Application, Infrastructure, Presentation harus terpisah
-- Tidak ada code yang melanggar boundary layer
-- Setiap layer memiliki responsibility yang jelas
+---
 
-**Dependency Rule**
-- Domain → tidak bergantung ke apapun
-- Application → hanya ke Domain
-- Infrastructure → ke Application & Domain
-- Presentation → hanya ke Application
+# 1. Architecture Layers & Dependency Rule
 
-**Module Separation**
-- Setiap module (Category, Book, Borrowing) terpisah
-- Tidak ada tight coupling antar module
-- Gunakan interface untuk communication antar module
+Dependensi proyek diatur dengan ketat dengan arah ke dalam (inner layers). Inner layers tidak boleh mereferensikan outer layers.
 
-### Aturan Dependency
-
-**No Circular Dependency**
-- Tidak ada circular dependency antar layer
-- Tidak ada circular dependency antar module
-- Gunakan dependency graph untuk check
-
-**Dependency Injection**
-- Gunakan DI container untuk semua dependencies
-- Inject dependencies melalui constructor
-- Gunakan lifetime scope yang benar (Scoped/Transient)
-
-**Interface Segregation**
-- Gunakan interface untuk abstraction
-- Interface harus specific dan focused
-- Jangan buat interface yang terlalu besar
-
-### Aturan Coding
-
-**SOLID Principles**
-- **S**ingle Responsibility: Satu class satu responsibility
-- **O**pen/Closed: Open for extension, closed for modification
-- **L**iskov Substitution: Subtype harus bisa substitusi parent
-- **I**nterface Segregation: Interface harus specific
-- **D**ependency Inversion: Depend pada abstraction, bukan concretion
-
-**Async/Await**
-- Gunakan async/await untuk I/O operations
-- Jangan block thread dengan .Result atau .Wait
-- ConfigureAwait(false) untuk library code
-
-**Exception Handling**
-- Gunakan try-catch untuk operation yang mungkin fail
-- Jangan swallow exception
-- Log exception untuk debugging
-- Return error response yang user-friendly
-
-**Validation**
-- Validasi input di API layer
-- Validasi business rule di service layer
-- Validasi database constraint di database layer
-
-### Convention Penamaan
-
-**C# Naming Convention**
-- Class: PascalCase (e.g., `BookService`)
-- Method: PascalCase (e.g., `GetAllBooks`)
-- Property: PascalCase (e.g., `BookTitle`)
-- Field: _camelCase (e.g., `_bookRepository`)
-- Interface: IPascalCase (e.g., `IBookService`)
-- Parameter: camelCase (e.g., `bookId`)
-
-**SQL Naming Convention**
-- Table: PascalCase singular (e.g., `Book`)
-- Column: PascalCase (e.g., `BookTitle`)
-- Primary Key: `Id`
-- Foreign Key: `TableNameId` (e.g., `CategoryId`)
-- Constraint: `PK_TableName`, `FK_TableName_Reference`
-
-**JSON Naming Convention**
-- Property: camelCase (e.g., `bookTitle`)
-- Enum: PascalCase (e.g., `BookStatus`)
-
-### Convention Folder
-
-**Project Structure**
-```
-DigitalLibrary.Domain/
-├── Entities/
-│   ├── User.cs
-│   ├── Category.cs
-│   └── Book.cs
-
-DigitalLibrary.Application/
-├── Interfaces/
-│   ├── IRepository.cs
-│   └── IBookService.cs
-├── DTOs/
-│   ├── BookDto.cs
-│   └── CreateBookDto.cs
-└── Services/
-    └── BookService.cs
-
-DigitalLibrary.Infrastructure/
-├── Data/
-│   ├── ApplicationDbContext.cs
-│   └── Configurations/
-└── Repositories/
-    └── BookRepository.cs
-
-DigitalLibrary.API/
-├── Controllers/
-│   └── BooksController.cs
-└── Program.cs
+```mermaid
+graph TD
+    API[Presentation.API] --> Application
+    WinForms[Presentation.WinForms] --> Application
+    Infrastructure[Infrastructure] --> Application
+    Application --> Domain
 ```
 
-**File Organization**
-- Satu file per class
-- File name sama dengan class name
-- Group related files dalam folder yang sama
-- Gunakan region untuk organize code (opsional)
+### Aturan Referensi Project (.csproj):
+1. **Domain**: Tidak mereferensikan proyek lain (0 dependencies).
+2. **Application**: Hanya mereferensikan proyek **Domain**.
+3. **Infrastructure**: Mereferensikan proyek **Application** dan **Domain**.
+4. **API / WinForms**: Hanya mereferensikan proyek **Application**. *Catatan: Khusus di entry point API, reference ke Infrastructure diperbolehkan hanya untuk registrasi dependency injection (DI) di Program.cs.*
 
 ---
 
-## Implementation Notes
+# 2. Layer Responsibilities & Rules
 
-- Gunakan tool untuk check naming convention (jika ada)
-- Review code secara berkala untuk memastikan compliance
-- Refactor jika melanggar aturan
+### Domain Layer (Core)
+* **Aturan**: Hanya berisi POCO (Plain Old CLR Objects) entity. Tidak boleh ada library database (seperti EF Core) di layer ini.
+* **Isi**: Entity C# (User, Book, Category, Borrowing, BorrowingDetail) beserta anotasi validasi basic `[Required]`, `[MaxLength]`.
 
----
+### Application Layer (Business Logic)
+* **Aturan**: Segala logika bisnis, pengecekan validasi stok, batasan peminjaman buku, dan kalkulasi denda wajib ditempatkan di sini.
+* **Isi**:
+  - Interface repository (`IBookRepository`, dll)
+  - Interface service (`IBookService`, dll)
+  - DTO (Data Transfer Objects) untuk membatasi properti data yang dikirim keluar.
+  - Implementasi service (`BookService`, dll) yang melakukan map/mapping.
 
-## Common Mistakes
+### Infrastructure Layer (Data Access & External Services)
+* **Aturan**: Hanya bertugas menyimpan dan mengambil data. Tidak boleh menentukan validasi bisnis (misal: memvalidasi apakah buku boleh dipinjam atau tidak).
+* **Isi**:
+  - `ApplicationDbContext` (EF Core)
+  - Implementasi concrete repository (`BookRepository` yang inherits dari `Repository<Book>`).
 
-- Langgar dependency rule
-- Tidak menggunakan interface
-- Tidak menggunakan async/await
-- Naming convention tidak konsisten
-- Folder structure tidak terorganisir
-
----
-
-## Exercises
-
-1. Identifikasi jika ada circular dependency di design Anda
-2. Review code Anda untuk SOLID compliance
-3. Check naming convention di code Anda
-4. Review folder structure Anda
-
----
-
-## Homework
-
-1. Review architecture rules sebelum coding
-2. Gunakan checklist untuk review code
-3. Refactor code jika melanggar aturan
-4. Diskusikan dengan mentor jika ada pertanyaan
+### Presentation Layer (API & UI Clients)
+* **Aturan**: Controller tidak boleh melakukan query EF Core secara langsung (`_context.Books.ToList()`). Controller hanya menerima request DTO, meneruskannya ke Service, dan mengembalikan Response DTO.
+* **Isi**: Controllers (REST API), Form (WinForms UI), Kotlin Activity (Android Client).
 
 ---
 
-## References
+# 3. Coding Standards & Conventions
 
-- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
-- [Clean Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [C# Coding Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+1. **Async/Await**: Semua interaksi dengan database atau API call wajib bersifat Asynchronous. Gunakan tipe data return `Task` atau `Task<T>`.
+2. **Naming Convention**:
+   - Interface: Awali dengan huruf `I` (misal: `IRepository<T>`, `IBookService`).
+   - Repository implementation: Akhiri dengan `Repository` (misal: `BookRepository`).
+   - Service implementation: Akhiri dengan `Service` (misal: `BookService`).
+   - DTO: Akhiri dengan `Dto`, `CreateBookDto`, `BookDto` (untuk response).
+3. **Strict DTO Mapping**: Jangan pernah mengembalikan database entity (`Book`) langsung ke Client. Selalu map entity tersebut ke response DTO (`BookDto`) menggunakan mapper (AutoMapper atau manual mapping).
 
 ---
 
-## Related Documents
+# Common Mistakes (Wajib Dihindari)
 
-- [project_constitution.md](./project_constitution.md) - Filosofi project
-- [implementation_plan.md](./implementation_plan.md) - Rencana implementasi
+* ❌ **Logic di Controller**: Menulis validasi stok buku di dalam `BooksController.cs`.
+* ❌ **Direct EF Core**: Menggunakan `ApplicationDbContext` langsung di dalam Controller.
+* ❌ **Leakage of Database**: Membagikan database entity ke UI client. Hal ini merusak independensi UI.
+* ❌ **Blocking Calls**: Menggunakan `.Result` atau `.Wait()` pada asynchronous calls.
+
+---
+
+# Exercises & Self-Review
+
+1. Gambar diagram dependensi proyek Anda setelah melakukan setup proyek di Task 2. Pastikan tidak ada referensi melingkar (circular dependency).
+2. Temukan kode controller yang langsung memanggil DbContext, lalu buatlah rencana untuk memindahkan logika tersebut ke Application Service menggunakan generic repository.
+
+---
+
+# References
+
+* *Clean Architecture: A Craftsman's Guide to Software Structure and Design* by Robert C. Martin (Uncle Bob).
+* Microsoft Architecture Guides: Common Web Application Architectures.
